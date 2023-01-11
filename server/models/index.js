@@ -1,3 +1,5 @@
 const User = require("./User");
 
-module.exports = { User };
+const Athlete = require("./Athlete");
+
+module.exports = { User, Athlete };
