@@ -32,7 +32,7 @@ const athleteSchema = new Schema({
   // wods: [wodSchema]
   wods: [
     {
-      type: String,
+      //This will contain the input fields needed
     },
   ],
 });
