@@ -29,7 +29,8 @@ const athleteSchema = new Schema({
   injuryReport: {
     type: String,
   },
-  programs: [
+  // wods: [wodSchema]
+  wods: [
     {
       type: String,
     },
