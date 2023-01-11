@@ -3,6 +3,10 @@ const { Schema } = require("mongoose");
 const wodSchema = require("./Wod");
 
 const athleteSchema = new Schema({
+  _id: {
+    type: ID,
+    required: true,
+  },
   firstName: {
     type: String,
     required: true,
