@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-// IN MUTATIONS: ADD WOD? REMOVE WOD? 
+// DO WE NEED WOD IN HERE AT ALL???   ADD WOD? REMOVE WOD? I DON"T THINK SO????
 // REMOVE ATHLETE goes to User? ADD ATHLETE goes to Athlete? not sure??????
 
 const typeDefs = gql`
@@ -16,6 +16,7 @@ type Athlete {
     lastName: String!
     email: String!
     phoneNumber: Int!
+    image: String
     notes: String
     injuryReport: String
     wods: [Wod]
@@ -44,6 +45,7 @@ input AddAthleteInput {
     lastName: String
     email: String
     phoneNumber: String
+    image: String
     notes: String
     injuryReport: String
     wods: [String]
@@ -62,6 +64,7 @@ type Mutation {
         lastName: String
         email: String
         phoneNumber: String
+        image: String
         notes: String
         injuryReport: String
         wods: [String]
