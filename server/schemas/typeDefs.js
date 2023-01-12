@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-// IN MUTATIONS: ADD WOD? REMOVE WOD? ADD SKILLS? REMOVE SKILLS?
+// IN MUTATIONS: ADD WOD? REMOVE WOD? 
 // REMOVE ATHLETE goes to User? ADD ATHLETE goes to Athlete? not sure??????
 
 const typeDefs = gql`
@@ -21,16 +21,13 @@ type Athlete {
     wods: [Wod]
 }
 type Wod {
-    -id: ID
-    wodDate: String
-    skills: [Skill]
-}
-type Skill {
     _id: ID
+    wodDate: Date
     type: String
     name: String
     description: String
 }
+    
 type Auth {
     token: ID
     user: User
@@ -60,7 +57,7 @@ type Mutation {
     ): Auth
     login(email: String!, password: String!): Auth
     addAthlete(athlete: AddAthleteInput): Athlete
-    updateAthlete(
+    editAthlete(
         firstName: String
         lastName: String
         email: String
