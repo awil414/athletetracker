@@ -1,6 +1,4 @@
-const { Schema } = require("mongoose");
-
-const wodSchema = require("./Wod");
+const { Schema, model } = require("mongoose");
 
 const athleteSchema = new Schema({
   _id: {
@@ -23,18 +21,23 @@ const athleteSchema = new Schema({
     type: Number,
     required: true,
   },
+  image: {
+    type: String,
+  },
   notes: {
     type: String,
   },
   injuryReport: {
     type: String,
   },
-  // wods: [wodSchema]
   wods: [
     {
-      //This will contain the input fields needed
+      type: Schema.Types.ObjectId,
+      ref: "Wod",
     },
   ],
 });
 
-module.exports = athleteSchema;
+const Athlete = model("Athlete", athleteSchema);
+
+module.exports = Athlete;
