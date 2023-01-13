@@ -21,9 +21,9 @@ type Athlete {
     wods: {
         _id: ID
         wodDate: Date
-        type: String
-        name: String
-        description: String
+        performanceType: String
+        skill: String
+        result: String
     }
 }
     
