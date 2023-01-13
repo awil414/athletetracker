@@ -8,13 +8,13 @@ const wodSchema = new Schema({
   date: {
     type: Date,
   },
-  type: {
+  performanceType: {
     type: String,
   },
-  name: {
+  skill: {
     type: String,
   },
-  description: {
+  result: {
     type: String,
   },
 });
