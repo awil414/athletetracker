@@ -1,6 +1,5 @@
 const { gql } = require('apollo-server-express');
 
-// DO WE NEED WOD IN HERE AT ALL???   ADD WOD? REMOVE WOD? I DON"T THINK SO????
 // REMOVE ATHLETE goes to User? ADD ATHLETE goes to Athlete? not sure??????
 
 const typeDefs = gql`
@@ -19,14 +18,13 @@ type Athlete {
     image: String
     notes: String
     injuryReport: String
-    wods: [Wod]
-}
-type Wod {
-    _id: ID
-    wodDate: Date
-    type: String
-    name: String
-    description: String
+    wods: {
+        _id: ID
+        wodDate: Date
+        type: String
+        name: String
+        description: String
+    }
 }
     
 type Auth {
@@ -41,10 +39,10 @@ type Query {
 
 input AddAthleteInput {
     _id: ID
-    firstName: String
-    lastName: String
-    email: String
-    phoneNumber: String
+    firstName: String!
+    lastName: String!
+    email: String!
+    phoneNumber: Int!
     image: String
     notes: String
     injuryReport: String
@@ -59,11 +57,11 @@ type Mutation {
     ): Auth
     login(email: String!, password: String!): Auth
     addAthlete(athlete: AddAthleteInput): Athlete
-    editAthlete(
+    updateAthlete(
         firstName: String
         lastName: String
         email: String
-        phoneNumber: String
+        phoneNumber: Int
         image: String
         notes: String
         injuryReport: String
