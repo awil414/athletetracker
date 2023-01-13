@@ -16,11 +16,13 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
 
+    // ?????????? which is best???
     // query to GET all of user's athletes
     athletes: async (parent, args, context) => {
       try {
-        const allAthletes = await Athlete.findAll({}, context);
-        return allAthletes;
+        return await Athlete.findAll({}, context);
+        // const allAthletes = await Athlete.findAll({}, context);
+        // return allAthletes;
       } catch (err) {
         if (err) {
           console.log(err);
@@ -65,6 +67,46 @@ const resolvers = {
         const token = signToken(user);
         // Return an `Auth` object that consists of the signed token and user's info
         return { token, user };
+      },
+      
+      // ??????? HELP add athlete and update the users athletes
+      addAthlete: async (parent, { athlete }, context) => {
+        if (context.user) {
+            // Create the athlete
+            const athlete = await Athlete.create({params});
+          const updateUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+            { $addToSet: { currentAthletes: athlete } },
+            { new: true }
+          );
+          return athlete;
+          return updateUser;
+        }
+        throw new AuthenticationError("You need to be logged in!");
+      }, 
+                                    ///?????????
+      removeAthlete: async (parent, { athleteId }, context) => {
+        if (context.user) {
+          const updateUser = await User.findByIdAndUpdate(
+            { _id: context.user._id },
+                                            //?????
+            { $pull: { currentAthletes: { athleteId } } },
+            { new: true }
+          );
+          return updateUser;
+        }
+        throw new AuthenticationError("You need to be logged in!");
+      },
+
+                                    ////??????
+      updateAthlete: async (parent, { id }) => {
+  
+        return Athlete.findByIdAndUpdate(
+          id,
+          ///HELP ?????????? update athlete and update that to user 
+          { $inc: { quantity: decrement } },
+          { new: true }
+        );
       },
   }
 };
