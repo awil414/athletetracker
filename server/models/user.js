@@ -22,7 +22,12 @@ const userSchema = new Schema(
       required: true,
     },
     // set currentAthletes to be an array of data that adheres to the athleteSchema
-    currentAthletes: [athleteSchema],
+    currentAthletes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Athlete",
+      },
+    ],
   },
   // set this to use virtual below
   {

@@ -1,15 +1,13 @@
-const { gql } = require('apollo-server-express');
-
-// REMOVE ATHLETE goes to User? ADD ATHLETE goes to Athlete? not sure??????
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-type User {
+  type User {
     _id: ID!
     username: String!
     email: String!
     currentAthletes: [Athlete]
-}
-type Athlete {
+  }
+  type Athlete {
     _id: ID!
     firstName: String!
     lastName: String!
@@ -18,27 +16,28 @@ type Athlete {
     image: String
     notes: String
     injuryReport: String
-    wods: {
-        _id: ID
-        wodDate: Date
-        performanceType: String
-        skill: String
-        result: String
-    }
-}
-    
-type Auth {
+    wods: [Wod]
+  }
+
+  type Wod {
+    wodId: ID
+    wodDate: Date
+    performanceType: String
+    skill: String
+    result: String
+  }
+
+  type Auth {
     token: ID
     user: User
-}
-type Query {
+  }
+  type Query {
     me: User
     athletes: [Athlete]
-    athlete(_id: ID!): Athlete
-}
+    singleAthlete(_id: ID!): Athlete
+  }
 
-input AddAthleteInput {
-    _id: ID
+  input AthleteInput {
     firstName: String!
     lastName: String!
     email: String!
@@ -46,28 +45,15 @@ input AddAthleteInput {
     image: String
     notes: String
     injuryReport: String
-    wods: [String]
-}
+    wods: [Wod]
+  }
 
-type Mutation {
-    addUser(
-        username: String! 
-        email: String! 
-        password: String!
-    ): Auth
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addAthlete(athlete: AddAthleteInput): Athlete
-    updateAthlete(
-        firstName: String
-        lastName: String
-        email: String
-        phoneNumber: Int
-        image: String
-        notes: String
-        injuryReport: String
-        wods: [String]
-    ): Athlete
+    addAthlete(athlete: AthleteInput): Athlete
+    updateAthlete(_id: ID, athleteData: AthleteInput): Athlete
     removeAthlete(_id: ID): User
-}   
-`
+  }
+`;
 module.exports = typeDefs;
