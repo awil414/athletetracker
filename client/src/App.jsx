@@ -1,7 +1,12 @@
 import React from 'react';
-import logo from "./logo.svg";
 import "./App.css";
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginForm from './components/Home/LoginForm';
+import SignUp from './components/Home/SignUp';
+import Athlete from './components/Athlete/Athlete';
+import Dashboard from './components/Dashboard/Dashboard';
+import Wods from './components/Wods/Wods';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -15,24 +20,18 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client = { client }>
-
-    
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+        <Navbar />
+        <Routes>
+          <Route exact path='/' component={LoginForm} />
+          <Route exact path='/signup' component={SignUp} />
+          <Route exact path='/athlete' component={Athlete} />
+          <Route exact path='/dashboard' component={Dashboard} />
+          <Route exact path='/wods' component={Wods} />
+        </Routes>
+    </>
+    </Router>
     </ApolloProvider>
   );
 }
