@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
-  "dependencies": {},
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.6.6"
+  },
   "devDependencies": {
     "concurrently": "^7.6.0"
   },
