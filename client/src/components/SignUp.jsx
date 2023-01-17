@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './home.css';
+// import './home.css';
 
 const SignUp = () => {
   return (
