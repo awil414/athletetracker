@@ -6,10 +6,6 @@ import Athlete from './components/Athlete/Athlete';
 import Dashboard from './components/Dashboard/Dashboard';
 import Wods from './components/Wods/Wods';
 import Navbar from './components/Navbar/Navbar';
-<<<<<<< HEAD
-=======
-
->>>>>>> ea7e687ee630d121e90e3effdf043a08ee0ebf53
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 
