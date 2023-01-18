@@ -1,3 +1,7 @@
+// ?????????????????
+// Hi Tierney & Bobbi!! 
+// Time permitting -- please see lines 23-26, 46-58, 108, 118, 121, 136-137, 143-144, 149-151
+
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
@@ -16,6 +20,11 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+// import { useQuery, useMutation } from "@apollo/client";
+// import Auth from "../../utils/auth";
+// import { QUERY_ME } from "../../utils/queries";
+// import { ADD_ATHLETE } from "../../utils/mutations";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -33,7 +42,21 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
-export default function Album() {
+export default function Dashboard() {
+    // const { loading, data } = useQuery(QUERY_ME);
+    // const userData = data?.me || [];
+    // const [addAthlete] = useMutation(ADD_ATHLETE);
+
+    // ????? CREATE FUNCTION TO handleADDATHLETE ????
+    // ???? MAKE A FORM OR MODAL ?????
+    // const handleAddAthlete = 
+    // const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+  // if data isn't here yet, say so
+  // if (loading) {
+  //   return <h2>LOADING...</h2>;
+  // }
+  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -80,14 +103,22 @@ export default function Album() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Create New Athlete</Button>
+              <Button 
+                variant="contained"
+                // onClick={() => handleAddAthlete(athlete.athleteId)}
+              >
+                Create New Athlete
+              </Button>
             </Stack>
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
+            {/* {userData.Dashboard.map((athlete) => {
+            return ( */}
             {cards.map((card) => (
+              // <Grid item key={athlete.athleteId} xs={12} sm={6} md={4}>
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
                   sx={{
@@ -102,15 +133,22 @@ export default function Album() {
                       // 16:9
                       pt: "10%",
                     }}
+                    // src={athlete.image}
+                    // alt={`Photo of ${athlete.firstName}`}
                     image="https://source.unsplash.com/random"
                     alt="random"
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
+                      {/* ????? CAN I DO THIS DOUBLE DOT REFERENCE ???? */}
+                      {/* {athlete.firstName.LastName} */}
                       Athlete Name
                     </Typography>
                     <Typography>
                       <ul>
+                        {/* <li>{athlete.phoneNumber}</li>
+                        <li>{athlete.email}</li>
+                        <li>{athlete.injuryReport}</li> */}
                         <li>Phone Number</li>
                         <li>Email</li>
                         <li>Status</li>
