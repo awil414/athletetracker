@@ -6,7 +6,7 @@ import LoginForm from "./components/LoginForm.jsx";
 import SignUp from "./components/SignUp";
 import Athlete from "./components/Athlete/Athlete";
 import NewAthlete from "./components/NewAthlete/NewAthlete";
-
+import Update from './components/Athlete/Update';
 import Dashboard from "./components/Dashboard/Dashboard";
 import Wods from "./components/Wods/Wods";
 import Navbar from "./components/Navbar/Navbar";
@@ -59,6 +59,7 @@ function App() {
             />
             <Route exact path="/search" element={<Athlete />} />
             <Route exact path="/add" element={<NewAthlete />} />
+            <Route exact path='/update' element={<Update />} />
             <Route element={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>
         </>
