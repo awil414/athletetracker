@@ -1,3 +1,8 @@
+// ???? QUESTION -- we set these up first, do the components in src have to match??
+// ???? Specifically - does line 17 need to be Dashboard? Or maybe we need
+// to change Dashboard component in src to currentAthletes?
+
+
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Athlete } = require("../models");
 const { signToken } = require("../utils/auth");
