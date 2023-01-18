@@ -20,7 +20,6 @@ export const ADD_USER = gql`
         _id
         username
         email
-        bookCount
         currentAthletes {
           _id
           firstName
