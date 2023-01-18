@@ -5,6 +5,8 @@ import Home from './pages/Home/home.jsx';
 import LoginForm from './components/LoginForm.jsx';
 import SignUp from './components/SignUp';
 import Athlete from './components/Athlete/Athlete';
+import NewAthlete from './components/NewAthlete/NewAthlete';
+
 import Dashboard from './components/Dashboard/Dashboard';
 import Wods from './components/Wods/Wods';
 import Navbar from './components/Navbar/Navbar';
@@ -46,6 +48,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={(Auth.loggedIn() ? < Dashboard /> : < Home /> )} />
             <Route exact path='/search' element={< Athlete />} />
+            <Route exact path='/add' element={< NewAthlete />} />
             <Route element={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Routes>
         </>
