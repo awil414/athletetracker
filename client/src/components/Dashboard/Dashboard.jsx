@@ -1,8 +1,9 @@
 // ?????????????????
 // Hi Tierney & Bobbi!! 
-// Time permitting -- please see lines 23-26, 46-58, 108, 118, 121, 136-137, 143-144, 149-151
+// Time permitting -- please see lines 24-27, 47-68, 118, 128, 131, 146-147, 153-154, 159-161
 
 import * as React from "react";
+import { Navigate, useParams } from 'react-router-dom';
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 // import CameraIcon from "@mui/icons-material/PhotoCamera";
@@ -43,8 +44,22 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const theme = createTheme();
 
 export default function Dashboard() {
-    // const { loading, data } = useQuery(QUERY_ME);
+    // const { username: userParam } = useParams();
+
+    // const { loading, data } = useQuery(userParam ? QUERY_ME, {
+    //   variables: { username: userParam },
+    // });
     // const userData = data?.me || [];
+    // navigate to personal profile page if username is yours
+    // if (Auth.loggedIn() && Auth.getDashboard().data.username === userParam) {
+    //   return <Navigate to="/dashboard" />;
+    // }
+
+    // if data isn't here yet, say so
+    // if (loading) {
+    //   return <h2>LOADING...</h2>;
+    // }
+
     // const [addAthlete] = useMutation(ADD_ATHLETE);
 
     // ????? CREATE FUNCTION TO handleADDATHLETE ????
@@ -52,11 +67,6 @@ export default function Dashboard() {
     // const handleAddAthlete = 
     // const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-  // if data isn't here yet, say so
-  // if (loading) {
-  //   return <h2>LOADING...</h2>;
-  // }
-  
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
