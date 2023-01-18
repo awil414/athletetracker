@@ -5,6 +5,7 @@ import SignUpForm from "../SignUp";
 import LoginForm from "../LoginForm";
 
 import Auth from "../../utils/auth";
+import './navbar.css';
 
 const AppNavbar = () => {
   // set modal display state
@@ -12,7 +13,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar className='navbar'/*bg="dark" variant="dark" expand="lg"*/>
         <Container fluid>
           <Navbar.Brand as={Link} to="/">
             athletetracker
@@ -24,7 +25,6 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to="/search">
                 Search For Athlete
               </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to="/waiver">
@@ -52,20 +52,20 @@ const AppNavbar = () => {
         aria-labelledby="signup-modal"
       >
         {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey="login">
+        <Tab.Container className='modal' defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
-              <Nav variant="pills">
-                <Nav.Item>
+              <Nav className='nav-items'>
+                <Nav.Item className='nav-item'>
                   <Nav.Link eventKey="login">Log In</Nav.Link>
                 </Nav.Item>
-                <Nav.Item>
+                <Nav.Item className='nav-item'>
                   <Nav.Link eventKey="signup">Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='modal-body'>
             <Tab.Content>
               <Tab.Pane eventKey="login">
                 <LoginForm handleModalClose={() => setShowModal(false)} />

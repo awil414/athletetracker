@@ -1,0 +1,25 @@
+.navbar{
+    background: var(--variant);
+    color: var(--text);
+}
+
+.modal{
+    background: var(--background);
+}
+
+.modal-body{
+    background: var(--text);
+}
+
+.nav-item{
+    background: var(--variant);
+}
+
+.nav-items{
+    gap:1rem;
+    color:var(--text);
+}
+
+.SignUp-button{
+    background: var(--buttons);
+}
