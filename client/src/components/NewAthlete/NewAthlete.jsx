@@ -1,33 +1,41 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+//???? We need to think through images.....
+
+import React from "react";
+
 import "./NewAthlete.css";
 
-export default function NewAthlete() {
+import Form from "react-bootstrap/Form";
+
+function NewAthlete() {
   return (
-    <Card sx={{ maxWidth: 500 }} className="card">
-      <CardMedia
-        sx={{ height: 200 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Edit</Button>
-        <Button size="small">Delete</Button>
-      </CardActions>
-    </Card>
+    <Form>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>First Name</Form.Label>
+        <Form.Control type="name" placeholder="Athlete First Name" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Last Name</Form.Label>
+        <Form.Control type="name" placeholder="Athlete Last Name" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Email Address</Form.Label>
+        <Form.Control type="email" placeholder="athlete@athlete.com" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Phone Number</Form.Label>
+        <Form.Control type="number" placeholder="(000)000-0000" />
+      </Form.Group>
+      {/* Think through images.... */}
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Notes</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Injury Report</Form.Label>
+        <Form.Control as="textarea" rows={1} />
+      </Form.Group>
+    </Form>
   );
 }
+
+export default NewAthlete;
