@@ -2,7 +2,6 @@
 // ???? Specifically - does line 17 need to be Dashboard? Or maybe we need
 // to change Dashboard component in src to currentAthletes?
 
-
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Athlete } = require("../models");
 const { signToken } = require("../utils/auth");
@@ -47,9 +46,12 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
+      console.log("finally made it");
+      console.log({ username, email, password });
       // Create the user
       const user = await User.create({ username, email, password });
       // Immediately assign a JSON WebToken and log the user in
+      console.log(user);
       const token = signToken(user);
       // Return an `Auth` object that consists of the signed token and user's info
       return { token, user };

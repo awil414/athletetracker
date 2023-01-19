@@ -1,9 +1,9 @@
 // ?????????????????
-// Hi Tierney & Bobbi!! 
+// Hi Tierney & Bobbi!!
 // Time permitting -- please see lines 24-27, 47-68, 118, 128, 131, 146-147, 153-154, 159-161
 
 import * as React from "react";
-import { Navigate, useParams } from 'react-router-dom';
+import { Navigate, useParams } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 // import CameraIcon from "@mui/icons-material/PhotoCamera";
@@ -21,10 +21,10 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-// import { useQuery, useMutation } from "@apollo/client";
-// import Auth from "../../utils/auth";
-// import { QUERY_ME } from "../../utils/queries";
-// import { ADD_ATHLETE } from "../../utils/mutations";
+import { useQuery, useMutation } from "@apollo/client";
+import Auth from "../../utils/auth";
+import { QUERY_ME } from "../../utils/queries";
+import { ADD_ATHLETE } from "../../utils/mutations";
 
 function Copyright() {
   return (
@@ -44,28 +44,25 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const theme = createTheme();
 
 export default function Dashboard() {
-    // const { username: userParam } = useParams();
+  // const { username: userParam } = useParams();
 
-    // const { loading, data } = useQuery(userParam ? QUERY_ME, {
-    //   variables: { username: userParam },
-    // });
-    // const userData = data?.me || [];
-    // navigate to personal profile page if username is yours
-    // if (Auth.loggedIn() && Auth.getDashboard().data.username === userParam) {
-    //   return <Navigate to="/dashboard" />;
-    // }
+  const { loading, data } = useQuery(QUERY_ME);
+  const [addAthlete, { error, athleteData }] = useMutation(ADD_ATHLETE);
+  const userData = data?.me || {};
+  // navigate to personal profile page if username is yours
+  if (Auth.loggedIn()) {
+    return <Navigate to="/dashboard" />;
+  }
 
-    // if data isn't here yet, say so
-    // if (loading) {
-    //   return <h2>LOADING...</h2>;
-    // }
+  // if data isn't here yet, say so
+  if (loading) {
+    return <h2>LOADING...</h2>;
+  }
 
-    // const [addAthlete] = useMutation(ADD_ATHLETE);
-
-    // ????? CREATE FUNCTION TO handleADDATHLETE ????
-    // ???? MAKE A FORM OR MODAL ?????
-    // const handleAddAthlete = 
-    // const token = Auth.loggedIn() ? Auth.getToken() : null;
+  // ????? CREATE FUNCTION TO handleADDATHLETE ????
+  // ???? MAKE A FORM OR MODAL ?????
+  const handleAddAthlete = () => {};
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
 
   return (
     <ThemeProvider theme={theme}>
@@ -113,7 +110,7 @@ export default function Dashboard() {
               spacing={2}
               justifyContent="center"
             >
-              <Button 
+              <Button
                 variant="contained"
                 // onClick={() => handleAddAthlete(athlete.athleteId)}
               >
