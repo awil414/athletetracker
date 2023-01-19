@@ -20,17 +20,6 @@ export const ADD_USER = gql`
         _id
         username
         email
-        currentAthletes {
-          _id
-          firstName
-          lastName
-          email
-          phoneNumber
-          image
-          notes
-          injuryReport
-          wods
-        }
       }
     }
   }

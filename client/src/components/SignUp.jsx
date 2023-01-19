@@ -16,7 +16,7 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -34,13 +34,16 @@ const SignupForm = () => {
     }
 
     try {
+      console.log(userFormData);
       const { data } = await addUser({
         variables: { ...userFormData },
       });
 
+      console.log(data);
+
       Auth.login(data.addUser.token);
     } catch (err) {
-      console.error(err);
+      console.log(err);
       setShowAlert(true);
     }
 
@@ -60,56 +63,57 @@ const SignupForm = () => {
           dismissible
           onClose={() => setShowAlert(false)}
           show={showAlert}
-          variant='danger'
+          variant="danger"
         >
           Something went wrong with your signup!
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor='username'>Username</Form.Label>
+          <Form.Label htmlFor="username">Username</Form.Label>
           <Form.Control
-            type='text'
-            placeholder='Your username'
-            name='username'
+            type="text"
+            placeholder="Your username"
+            name="username"
             onChange={handleInputChange}
             value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type='invalid'>
+          <Form.Control.Feedback type="invalid">
             Username is required!
           </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Label htmlFor="email">Email</Form.Label>
           <Form.Control
-            type='email'
-            placeholder='Your email address'
-            name='email'
+            type="email"
+            placeholder="Your email address"
+            name="email"
             onChange={handleInputChange}
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>
+          <Form.Control.Feedback type="invalid">
             Email is required!
           </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Label htmlFor="password">Password</Form.Label>
           <Form.Control
-            type='password'
-            placeholder='Your password'
-            name='password'
+            type="password"
+            placeholder="Your password"
+            name="password"
             onChange={handleInputChange}
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>
+          <Form.Control.Feedback type="invalid">
             Password is required!
           </Form.Control.Feedback>
         </Form.Group>
-        <Button className='SignUp-button'
+        <Button
+          className="SignUp-button"
           disabled={
             !(
               userFormData.username &&
@@ -117,8 +121,8 @@ const SignupForm = () => {
               userFormData.password
             )
           }
-          type='submit'
-          variant='success'
+          type="submit"
+          variant="success"
         >
           Submit
         </Button>
@@ -128,10 +132,6 @@ const SignupForm = () => {
 };
 
 export default SignupForm;
-
-
-
-
 
 // import * as React from "react";
 // import Avatar from "@mui/material/Avatar";

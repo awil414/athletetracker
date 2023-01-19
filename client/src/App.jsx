@@ -6,7 +6,7 @@ import LoginForm from "./components/LoginForm.jsx";
 import SignUp from "./components/SignUp";
 import Athlete from "./components/Athlete/Athlete";
 import NewAthlete from "./components/NewAthlete/NewAthlete";
-import Update from './components/Athlete/Update';
+import Update from "./components/Athlete/Update";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Wods from "./components/Wods/Wods";
 import Navbar from "./components/Navbar/Navbar";
@@ -17,16 +17,30 @@ import {
   createHttpLink,
   InMemoryCache,
 } from "@apollo/client";
-
+import { setContext } from "@apollo/client/link/context";
 import Auth from "./utils/auth";
 
+// Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: "/graphql",
-  cache: new InMemoryCache(),
 });
-//login auth
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem("id_token");
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
 const client = new ApolloClient({
-  link: httpLink,
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -59,7 +73,7 @@ function App() {
             />
             <Route exact path="/search" element={<Athlete />} />
             <Route exact path="/add" element={<NewAthlete />} />
-            <Route exact path='/update' element={<Update />} />
+            <Route exact path="/update" element={<Update />} />
             <Route element={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>
         </>
