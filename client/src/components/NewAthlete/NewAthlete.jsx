@@ -1,14 +1,11 @@
-//???? We need to think through images.....
-
 import React from "react";
-
 import "./NewAthlete.css";
-
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 function NewAthlete() {
   return (
-    <Form>
+    <Form className="newAthlete">
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>First Name</Form.Label>
         <Form.Control type="name" placeholder="Athlete First Name" />
@@ -34,6 +31,9 @@ function NewAthlete() {
         <Form.Label>Injury Report</Form.Label>
         <Form.Control as="textarea" rows={1} />
       </Form.Group>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
     </Form>
   );
 }

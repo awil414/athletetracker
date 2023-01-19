@@ -5,3 +5,12 @@
   margin-top: 50px;
   margin-left: 100px;
 }
+
+.newAthlete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  justify-content: center;
+  margin-top: 30px;
+}
