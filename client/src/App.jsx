@@ -65,7 +65,6 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route exact path="/dashboard" element={<Dashboard />} />
             <Route
               exact
               path="/"
