@@ -1,7 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// const wodSchema = require("./Wod");
-
 const athleteSchema = new Schema(
   {
     firstName: {

@@ -69,10 +69,10 @@ export default function Dashboard() {
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {/* {userData.Dashboard.map((athlete) => {
+            {/* {athletes.map((athlete) => {
             return ( */}
             {cards.map((card) => (
-              // <Grid item key={athlete.athleteId} xs={12} sm={6} md={4}>
+              // <Grid item key={athlete._id} xs={12} sm={6} md={4}>
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card
                   sx={{
@@ -94,6 +94,7 @@ export default function Dashboard() {
                     </Typography>
                   </CardContent>
                   <CardActions>
+                    {/* <Link to={`/athlete/${athlete._id}`} style={{ textDecoration: 'none' }}> */}
                     <Link to="/athlete" style={{ textDecoration: 'none' }}>
                       <Button size="small">View Athlete</Button> 
                     </Link>
