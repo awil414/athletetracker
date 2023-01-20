@@ -25,11 +25,11 @@ const AppNavbar = () => {
               {/* <Nav.Link as={Link} to="/search">
                 Search For Athlete
               </Nav.Link> */}
-              {Auth.loggedIn() ? (
-                <>
-                  <Nav.Link as={Link} to="/waiver">
+              <Nav.Link as={Link} to="/waiver">
                     Waiver
                   </Nav.Link>
+              {Auth.loggedIn() ? (
+                <>
                   <Nav.Link as={Link} to="/dashboard">
                     Dashboard
                   </Nav.Link>
@@ -39,6 +39,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
+                
                 <Nav.Link onClick={() => setShowModal(true)}>
                   Login/Sign Up
                 </Nav.Link>
