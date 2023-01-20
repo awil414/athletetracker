@@ -40,7 +40,6 @@ export const ADD_ATHLETE = gql`
         image
         notes
         injuryReport
-        wods
       }
     }
   }
@@ -61,7 +60,6 @@ export const REMOVE_ATHLETE = gql`
         image
         notes
         injuryReport
-        wods
       }
     }
   }
@@ -82,7 +80,6 @@ export const UPDATE_ATHLETE = gql`
         image
         notes
         injuryReport
-        wods
       }
     }
   }

@@ -16,15 +16,6 @@ const typeDefs = gql`
     image: String
     notes: String
     injuryReport: String
-    wods: [Wod]
-  }
-
-  type Wod {
-    wodId: ID
-    wodDate: String
-    performanceType: String
-    skill: String
-    result: String
   }
 
   type Auth {

@@ -2,13 +2,9 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Home from "./pages/Home/home.jsx";
-import LoginForm from "./components/LoginForm.jsx";
-import SignUp from "./components/SignUp";
-import Athlete from "./components/Athlete/Athlete";
 import NewAthlete from "./components/NewAthlete/NewAthlete";
 import Update from "./components/Athlete/Update";
 import Dashboard from "./components/Dashboard/Dashboard";
-import Wods from "./components/Wods/Wods";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
@@ -18,7 +14,7 @@ import {
   InMemoryCache,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
-import Auth from "./utils/auth";
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -47,32 +43,13 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      {/* <Router>
-      <div className="align-center title">
-        <Navbar />
-        <div className='container home'>
-          <LoginForm />
-          <SignUp />
-        </div>
-        <div>
-          <Athlete />
-          <Dashboard />
-          <Wods />
-        </div>
-    </div>
-    </Router> */}
+
       <Router>
         <>
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
-            {/* <Route
-              exact
-              path="/dashboard"
-              element={Auth.loggedIn()}
-              {...(<Dashboard />)}
-            /> */}
             <Route exact path="/add" element={<NewAthlete />} />
             <Route exact path="/update" element={<Update />} />
             <Route element={() => <h1 className="display-2">Wrong page!</h1>} />
