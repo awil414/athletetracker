@@ -3,10 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Home from "./pages/Home/home.jsx";
 import NewAthlete from "./components/NewAthlete/NewAthlete";
-import Update from "./components/Athlete/Update";
+import Athlete from "./components/Athlete/Athlete";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
 import Waiver from "./components/Waiver/Waiver";
+import Update from "./components/Athlete/Update";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -53,6 +54,7 @@ function App() {
             <Route exact path="/waiver" element={<Waiver />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/add" element={<NewAthlete />} />
+            <Route exact path="/athlete" element={<Athlete />} />
             <Route exact path="/update" element={<Update />} />
             <Route element={() => <h1 className="display-2">Wrong page!</h1>} />
           </Routes>

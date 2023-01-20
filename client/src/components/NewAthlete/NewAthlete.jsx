@@ -14,25 +14,7 @@ const AddAthlete = () => {
 
   const [addAthlete, { error, data }] = useMutation(ADD_ATHLETE );
 
-  
-    // update(cache, { data: { addAthlete } }) {
-    //   try {
-    //     const { athletes } = cache.readQuery({ query: GET_ATHLETES });
 
-    //     cache.writeQuery({
-    //       query: GET_ATHLETES,
-    //       data: { athletes: [addAthlete, ...athletes] },
-    //     });
-    //   } catch (e) {
-    //     console.error(e);
-    //   }
-    //      // update me object's cache
-    //      const { me } = cache.readQuery({ query: QUERY_ME });
-    //      cache.writeQuery({
-    //        query: QUERY_ME,
-    //        data: { me: { ...me, athletes: [...me.athletes, addAthlete] } },
-    //      });
-    //    },
 
 
 const handleFormSubmit = async (event) => {
@@ -42,7 +24,6 @@ const handleFormSubmit = async (event) => {
     const { data } = await addAthlete({
       variables: {
         ...athleteFormData,
-        // thoughtAuthor: Auth.getProfile().data.username,
       },
     });
 
@@ -58,11 +39,6 @@ const handleInputChange = (event) => {
   }
 
 
-
-
-
-
-// function NewAthlete() {
   return (
     <Form className="newAthlete" onSubmit={handleFormSubmit}>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
@@ -91,7 +67,7 @@ const handleInputChange = (event) => {
         <Form.Control onChange={handleInputChange} value={athleteFormData.injuryReport} as="textarea" rows={1} />
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Create Athlete
       </Button>
     </Form>
   );
