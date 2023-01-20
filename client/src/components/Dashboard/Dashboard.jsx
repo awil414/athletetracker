@@ -35,10 +35,10 @@ export default function Dashboard() {
   const token = Auth.loggedIn() ? Auth.getToken() : null;
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider className='dashboard' theme={theme}>
       <CssBaseline />
       <AppBar position="relative"></AppBar>
-      <main>
+      <main className='dashboard'>
         {/* Hero unit */}
         <Box
           sx={{
