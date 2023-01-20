@@ -6,6 +6,7 @@ import NewAthlete from "./components/NewAthlete/NewAthlete";
 import Update from "./components/Athlete/Update";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Navbar from "./components/Navbar/Navbar";
+import Waiver from "./components/Waiver/Waiver";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -49,6 +50,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/waiver" element={<Waiver />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
             <Route exact path="/add" element={<NewAthlete />} />
             <Route exact path="/update" element={<Update />} />
