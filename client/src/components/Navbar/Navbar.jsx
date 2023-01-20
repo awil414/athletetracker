@@ -31,7 +31,7 @@ const AppNavbar = () => {
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to="/dashboard">
-                    Dashboard
+                    Current Athletes
                   </Nav.Link>
                   <Nav.Link as={Link} to="/add">
                     Add New Athlete

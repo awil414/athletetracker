@@ -56,7 +56,7 @@ export default function Dashboard() {
               color="text.primary"
               gutterBottom
             >
-              Athletes
+              Current Athletes
             </Typography>
             <Stack
               sx={{ pt: 4 }}
@@ -94,8 +94,8 @@ export default function Dashboard() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Link to="/update" style={{ textDecoration: 'none' }}>
-                      <Button size="small">Go to Athlete</Button> 
+                    <Link to="/athlete" style={{ textDecoration: 'none' }}>
+                      <Button size="small">View Athlete</Button> 
                     </Link>
                   </CardActions>
                 </Card>
