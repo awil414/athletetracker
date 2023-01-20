@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useQuery } from "@apollo/client";
 import Auth from "../../utils/auth";
 import { QUERY_ME } from "../../utils/queries";
+import { Link } from "react-router-dom";
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -93,7 +94,9 @@ export default function Dashboard() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">Go to Athlete</Button>
+                    <Link to="/update" style={{ textDecoration: 'none' }}>
+                      <Button size="small">Go to Athlete</Button> 
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
