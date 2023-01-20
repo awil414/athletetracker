@@ -1,3 +1,7 @@
 .dashboard {
     background: var(--background);
 }
+
+.link {
+    text-decoration: none;
+}
