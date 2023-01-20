@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const wodSchema = require("./Wod");
+// const wodSchema = require("./Wod");
 
 const athleteSchema = new Schema(
   {
@@ -29,7 +29,6 @@ const athleteSchema = new Schema(
     injuryReport: {
       type: String,
     },
-    wods: [wodSchema],
   },
   {
     toJSON: {

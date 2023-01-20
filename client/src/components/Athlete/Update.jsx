@@ -6,7 +6,22 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+import { GET_ATHLETE } from '../../utils/queries';
+import { useQuery, useMutation } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+
 export default function NewAthlete() {
+  // Use 'useParams()' to retrieve value of the route parameter ':athleteId 
+  const { athleteId } = useParams();
+  const { loading, data } = useQuery(GET_ATHLETE, {
+    variables: { athleteId: athleteId },
+  });
+
+  const athlete = data?.athlete || {};
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
   return (
     <Card sx={{ maxWidth: 500 }} className="card">
       <CardMedia

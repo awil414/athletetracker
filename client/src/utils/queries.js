@@ -15,7 +15,6 @@ export const QUERY_ME = gql`
         image
         notes
         injuryReport
-        wods
       }
     }
   }
@@ -33,7 +32,6 @@ export const GET_ATHLETES = gql`
       image
       notes
       injuryReport
-      wods
     }
   }
 `;
@@ -50,7 +48,6 @@ export const GET_ATHLETE = gql`
       image
       notes
       injuryReport
-      wods
     }
   }
 `;
