@@ -65,12 +65,14 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/dashboard" element={<Dashboard />} />
+            {/* <Route
               exact
-              path="/"
-              element={Auth.loggedIn() ? <Dashboard /> : <Home />}
-            />
-            <Route exact path="/search" element={<Athlete />} />
+              path="/dashboard"
+              element={Auth.loggedIn()}
+              {...(<Dashboard />)}
+            /> */}
             <Route exact path="/add" element={<NewAthlete />} />
             <Route exact path="/update" element={<Update />} />
             <Route element={() => <h1 className="display-2">Wrong page!</h1>} />

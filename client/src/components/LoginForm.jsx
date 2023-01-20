@@ -13,10 +13,10 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React, { useState } from "react";
-import {useMutation } from '@apollo/client';
+import { useMutation } from "@apollo/client";
 import { Form, Button, Alert } from "react-bootstrap";
 
-import{ LOGIN_USER } from '../utils/mutations';
+import { LOGIN_USER } from "../utils/mutations";
 
 import Auth from "../utils/auth";
 
@@ -53,11 +53,11 @@ const LoginForm = () => {
       setShowAlert(true);
     }
 
-    setUserFormData({
-      username: "",
-      email: "",
-      password: "",
-    });
+    // setUserFormData({
+    //   username: "",
+    //   email: "",
+    //   password: "",
+    // });
   };
 
   return (
@@ -113,7 +113,6 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
 
 // function Copyright(props) {
 //   return (
