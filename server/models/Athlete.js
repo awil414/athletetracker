@@ -18,9 +18,6 @@ const athleteSchema = new Schema(
       type: Number,
       required: true,
     },
-    image: {
-      type: String,
-    },
     notes: {
       type: String,
     },
