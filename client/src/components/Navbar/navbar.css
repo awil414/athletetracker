@@ -3,6 +3,14 @@
     color: var(--text);
 }
 
+.nav-link {
+    color: white !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
 .modal{
     background: var(--background);
 }
@@ -12,7 +20,8 @@
 }
 
 .nav-item{
-    background: var(--variant);
+    background: blue;
+    border-radius: 4px;
 }
 
 .nav-items{
@@ -23,3 +32,14 @@
 .SignUp-button{
     background: var(--buttons);
 }
+
+.athlete {
+    color: red;
+}
+
+.tracker {
+    color: gray;
+}
+ .close {
+    color: blue;
+ }

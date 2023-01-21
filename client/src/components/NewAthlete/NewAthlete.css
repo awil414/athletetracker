@@ -14,3 +14,7 @@
   justify-content: center;
   margin-top: 30px;
 }
+
+.form-label {
+  color: gray;
+}

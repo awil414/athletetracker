@@ -13,18 +13,14 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar className="navbar" /*bg="dark" variant="dark" expand="lg"*/>
+      <Navbar className="navbar" >
         <Container fluid>
-          <Navbar.Brand as={Link} to="/">
-            athletetracker
+          <Navbar.Brand eventKey='1' as={Link} to="/">
+            <span className='athlete'>athlete</span><span className='tracker'>tracker</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
-            <Nav className="ml-auto">
-              {/* ??? May want to move this to only visible if logged in  like lines below */}
-              {/* <Nav.Link as={Link} to="/search">
-                Search For Athlete
-              </Nav.Link> */}
+            <Nav className="ms-auto">
               <Nav.Link as={Link} to="/waiver">
                     Waiver
                   </Nav.Link>
@@ -61,7 +57,7 @@ const AppNavbar = () => {
             <Modal.Title id="signup-modal">
               <Nav className="nav-items">
                 <Nav.Item className="nav-item">
-                  <Nav.Link eventKey="login">Log In</Nav.Link>
+                  <Nav.Link style={{ color: 'blue' }} eventKey="login">Log In</Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="nav-item">
                   <Nav.Link eventKey="signup">Sign Up</Nav.Link>
