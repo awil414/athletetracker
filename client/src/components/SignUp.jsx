@@ -3,6 +3,7 @@ import { Form, Button, Alert } from "react-bootstrap";
 import { ADD_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
+import "./signup.css";
 
 const SignupForm = () => {
   // set initial form state
@@ -69,7 +70,9 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor="username">Username</Form.Label>
+          <Form.Label htmlFor="username" className="spacing">
+            Username
+          </Form.Label>
           <Form.Control
             type="text"
             placeholder="Your username"
@@ -84,7 +87,9 @@ const SignupForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="email" className="spacing">
+            Email
+          </Form.Label>
           <Form.Control
             type="email"
             placeholder="Your email address"
@@ -113,7 +118,8 @@ const SignupForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
-          className="SignUp-button"
+          className="spacing"
+          id="button"
           disabled={
             !(
               userFormData.username &&
