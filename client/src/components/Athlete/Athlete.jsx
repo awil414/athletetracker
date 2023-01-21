@@ -11,9 +11,13 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import { GET_ATHLETE } from '../../utils/queries';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
+import { REMOVE_ATHLETE} from '../../utils/mutations';
+
+import Auth from '../../utils/auth';
 
 export default function Athlete() {
   // Use 'useParams()' to retrieve value of the route parameter ':athleteId 
@@ -23,6 +27,27 @@ export default function Athlete() {
   });
 
   const athlete = data?.athlete || {};
+
+  const [removeAthlete] = useMutation(REMOVE_ATHLETE);
+
+  // create function that accepts the athlete's mongo _id value as param and deletes the athlete from the database
+  const handleRemoveAthlete = async (athlete_id) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const response = await removeAthlete({
+        variables: { athlete_id },
+      });
+
+      removeAthlete(athlete_id);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -49,7 +74,7 @@ export default function Athlete() {
         <Button size="small">Edit</Button>
        </Link> 
        {/* Needs to connect to MongoDB to REMOVE_ATHLETE */}
-        <Button size="small">Delete</Button>
+        <Button  onClick={() => handleRemoveAthlete(athlete.athlete_id)} size="small">Delete</Button>
       </CardActions>
     </Card>
   );
