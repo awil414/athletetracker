@@ -70,7 +70,6 @@ export const UPDATE_ATHLETE = gql`
         lastName
         email
         phoneNumber
-        image
         notes
         injuryReport
       }
