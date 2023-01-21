@@ -1,0 +1,45 @@
+.navbar{
+    background: var(--variant);
+    color: var(--text);
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.modal{
+    background: var(--background);
+}
+
+.modal-body{
+    background: var(--text);
+}
+
+.nav-item{
+    background: blue;
+    border-radius: 4px;
+}
+
+.nav-items{
+    gap:1rem;
+    color:var(--text);
+}
+
+.SignUp-button{
+    background: var(--buttons);
+}
+
+.athlete {
+    color: red;
+}
+
+.tracker {
+    color: gray;
+}
+ .close {
+    color: blue;
+ }

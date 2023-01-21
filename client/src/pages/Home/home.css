@@ -1,0 +1,16 @@
+.bg-img {
+    background-image: url(../../images/athletetracker.jpeg) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    display: block;
+    width: 100%;
+    min-height: 100% !important;
+    color: white;
+    font-size: 60px;
+  }
+
+  .container {
+    height: 100vh;
+  }
