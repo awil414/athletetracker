@@ -61,10 +61,10 @@ const handleInputChange = (event) => {
         <Form.Label>Email Address</Form.Label>
         <Form.Control name='email' onChange={handleInputChange} value={athleteFormData.email} type="email" placeholder="athlete@athlete.com" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Phone Number</Form.Label>
         <Form.Control name='phoneNumber' onChange={handleInputChange} value={athleteFormData.phoneNumber} type="number" placeholder="(000)000-0000" />
-      </Form.Group>
+      </Form.Group> */}
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Notes</Form.Label>
         <Form.Control name='notes' onChange={handleInputChange} value={athleteFormData.notes} as="textarea" rows={3} />

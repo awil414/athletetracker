@@ -12,7 +12,6 @@ export const QUERY_ME = gql`
         lastName
         email
         phoneNumber
-        image
         notes
         injuryReport
       }
@@ -29,7 +28,6 @@ export const GET_ATHLETES = gql`
       lastName
       email
       phoneNumber
-      image
       notes
       injuryReport
     }
@@ -45,7 +43,6 @@ export const GET_ATHLETE = gql`
       lastName
       email
       phoneNumber
-      image
       notes
       injuryReport
     }
