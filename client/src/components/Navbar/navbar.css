@@ -1,45 +1,45 @@
-.navbar{
-    background: var(--variant);
-    color: var(--text);
+.navbar {
+  background: var(--variant);
+  color: var(--text);
 }
 
 .nav-link {
-    color: white !important;
+  color: white !important;
 }
 
 .navbar-brand {
-    color: white !important;
+  color: white !important;
 }
 
-.modal{
-    background: var(--background);
+.modal {
+  background: var(--background);
 }
 
-.modal-body{
-    background: var(--text);
+.modal-body {
+  background: var(--text);
 }
 
-.nav-item{
-    background: blue;
-    border-radius: 4px;
+.nav-item {
+  background: red;
+  border-radius: 4px;
 }
 
-.nav-items{
-    gap:1rem;
-    color:var(--text);
+.nav-items {
+  gap: 1rem;
+  color: var(--text);
 }
 
-.SignUp-button{
-    background: var(--buttons);
+.SignUp-button {
+  background: red;
 }
 
 .athlete {
-    color: red;
+  color: red;
 }
 
 .tracker {
-    color: gray;
+  color: gray;
 }
- .close {
-    color: blue;
- }
+.close {
+  color: blue;
+}

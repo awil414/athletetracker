@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUpForm from "../SignUp";
 import LoginForm from "../LoginForm";
-
 import Auth from "../../utils/auth";
 import "./navbar.css";
 
@@ -13,17 +12,18 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar className="navbar" >
+      <Navbar className="navbar">
         <Container fluid>
-          <Navbar.Brand eventKey='1' as={Link} to="/">
-            <span className='athlete'>athlete</span><span className='tracker'>tracker</span>
+          <Navbar.Brand eventKey="1" as={Link} to="/">
+            <span className="athlete">athlete</span>
+            <span className="tracker">tracker</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/waiver">
-                    Waiver
-                  </Nav.Link>
+                Waiver
+              </Nav.Link>
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to="/dashboard">
@@ -35,7 +35,6 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                
                 <Nav.Link onClick={() => setShowModal(true)}>
                   Login/Sign Up
                 </Nav.Link>
@@ -57,7 +56,9 @@ const AppNavbar = () => {
             <Modal.Title id="signup-modal">
               <Nav className="nav-items">
                 <Nav.Item className="nav-item">
-                  <Nav.Link style={{ color: 'blue' }} eventKey="login">Log In</Nav.Link>
+                  <Nav.Link style={{ color: "blue" }} eventKey="login">
+                    Log In
+                  </Nav.Link>
                 </Nav.Item>
                 <Nav.Item className="nav-item">
                   <Nav.Link eventKey="signup">Sign Up</Nav.Link>
