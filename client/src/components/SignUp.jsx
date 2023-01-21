@@ -122,7 +122,7 @@ const SignupForm = () => {
             )
           }
           type="submit"
-          variant="success"
+          bsStyle="success"
         >
           Submit
         </Button>
