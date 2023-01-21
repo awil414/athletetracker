@@ -13,7 +13,6 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     phoneNumber: Int!
-    image: String
     notes: String
     injuryReport: String
   }
@@ -33,10 +32,8 @@ const typeDefs = gql`
     lastName: String!
     email: String!
     phoneNumber: Int!
-    image: String
     notes: String
     injuryReport: String
-  
   }
 
   type Mutation {
