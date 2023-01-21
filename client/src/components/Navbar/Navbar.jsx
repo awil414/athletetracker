@@ -5,6 +5,7 @@ import SignUpForm from "../SignUp";
 import LoginForm from "../LoginForm";
 import Auth from "../../utils/auth";
 import "./navbar.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const AppNavbar = () => {
   // set modal display state
@@ -30,7 +31,7 @@ const AppNavbar = () => {
                     Current Athletes
                   </Nav.Link>
                   <Nav.Link as={Link} to="/add">
-                    Add New Athlete
+                    Add Athlete
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
