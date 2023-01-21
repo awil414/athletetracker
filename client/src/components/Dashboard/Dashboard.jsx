@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
@@ -36,12 +35,13 @@ export default function Dashboard() {
   const token = Auth.loggedIn() ? Auth.getToken() : null;
 
   return (
-    <ThemeProvider className='dashboard' theme={theme}>
+    <ThemeProvider className="dashboard" theme={theme}>
       <CssBaseline />
       <AppBar position="relative"></AppBar>
-      <main style={{ background: 'black' }} className='dashboard'>
+      <main style={{ background: "black" }} className="dashboard">
         {/* Hero unit */}
-        <Box style={{ background: 'black' }}
+        <Box
+          style={{ background: "black" }}
           sx={{
             bgcolor: "background.paper",
             pt: 8,
@@ -49,7 +49,8 @@ export default function Dashboard() {
           }}
         >
           <Container maxWidth="sm">
-            <Typography style={{ color: 'gray'}}
+            <Typography
+              style={{ color: "gray" }}
               component="h1"
               variant="h2"
               align="center"
@@ -68,7 +69,7 @@ export default function Dashboard() {
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+          <Grid container spacing={2}>
             {/* {athletes.map((athlete) => {
             return ( */}
             {cards.map((card) => (
@@ -95,8 +96,8 @@ export default function Dashboard() {
                   </CardContent>
                   <CardActions>
                     {/* <Link to={`/athlete/${athlete._id}`} style={{ textDecoration: 'none' }}> */}
-                    <Link to="/athlete" style={{ textDecoration: 'none' }}>
-                      <Button size="small">View Athlete</Button> 
+                    <Link to="/athlete" style={{ textDecoration: "none" }}>
+                      <Button size="small">View Athlete</Button>
                     </Link>
                   </CardActions>
                 </Card>

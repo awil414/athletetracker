@@ -75,14 +75,19 @@ const resolvers = {
 
     // Creating an athlete with athlete model then adding the new Athlete to currentAthlete array which updates the User
     addAthlete: async (parent, { athlete }, context) => {
+      console.log("addAthlete mutation");
+      console.log(athlete);
       if (context.user) {
         // Create the athlete
+
         const athleteData = await Athlete.create(athlete);
+        console.log(athleteData);
         const updateUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $addToSet: { currentAthletes: athleteData._id } },
           { new: true }
         );
+        console.log(updateUser);
         return athleteData;
       }
       throw new AuthenticationError("You need to be logged in!");

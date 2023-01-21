@@ -26,21 +26,15 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_ATHLETE = gql`
-  mutation AddAthlete($athlete: AddAthleteInput) {
+  mutation addAthlete($athlete: AthleteInput) {
     addAthlete(athlete: $athlete) {
       _id
-      username
+      firstName
+      lastName
       email
-      currentAthletes {
-        _id
-        firstName
-        lastName
-        email
-        phoneNumber
-        image
-        notes
-        injuryReport
-      }
+      phoneNumber
+      notes
+      injuryReport
     }
   }
 `;
@@ -57,7 +51,6 @@ export const REMOVE_ATHLETE = gql`
         lastName
         email
         phoneNumber
-        image
         notes
         injuryReport
       }
