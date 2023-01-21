@@ -39,17 +39,17 @@ export default function Dashboard() {
     <ThemeProvider className='dashboard' theme={theme}>
       <CssBaseline />
       <AppBar position="relative"></AppBar>
-      <main className='dashboard'>
+      <main style={{ background: 'black' }} className='dashboard'>
         {/* Hero unit */}
-        <Box
+        <Box style={{ background: 'black' }}
           sx={{
             bgcolor: "background.paper",
             pt: 8,
-            pb: 6,
+            pb: 2,
           }}
         >
           <Container maxWidth="sm">
-            <Typography
+            <Typography style={{ color: 'gray'}}
               component="h1"
               variant="h2"
               align="center"

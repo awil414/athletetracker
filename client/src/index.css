@@ -1,9 +1,9 @@
 :root{
-  --background: #303a2b;
-  --text: #f7f6de;
+  --background: black;
+  --text: white;
   --buttons: #8acdea;
   --border:#7a9b76 ;
-  --variant: #7a9b76;
+  --variant: black;
 }
 
 body {
