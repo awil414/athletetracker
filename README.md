@@ -52,7 +52,7 @@ This project was developed by Karen Adkins, Tierney Allen, Leah Choco, and Amber
 
 ## Questions/Contacts
 If you have any questions about the repo or would like to see more of our work, contact us at:
-* Tierney Allen  Email tierney_03@mac.com   [GitHub tierney03](https://github.com/tierney03)
-* Karen Adkins  Email fnk8476@gmail.com   [GitHub KarenAdkins84](https://github.com/KarenAdkins84)
-* Leah Choco  Email mrsleahchoco@gmail.com [GitHub leah-choco](https://github.com/leah-choco)
-* Amber Wilson  Email amber.wilson.code@gmail.com [GitHub awil414](https://github.com/awil414/).
+* Tierney Allen - tierney_03@mac.com GitHub  [tierney03](https://github.com/tierney03)
+* Karen Adkins - fnk8476@gmail.com  GitHub [KarenAdkins84](https://github.com/KarenAdkins84)
+* Leah Choco - mrsleahchoco@gmail.com GitHub [leah-choco](https://github.com/leah-choco)
+* Amber Wilson - amber.wilson.code@gmail.com GitHub [awil414](https://github.com/awil414/).
