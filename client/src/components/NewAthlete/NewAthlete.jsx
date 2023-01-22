@@ -107,8 +107,8 @@ const AddAthlete = () => {
         />
       </Form.Group>
       <Link to='/dashboard'>
-        <Button variant="primary" type="submit">
-        Create Athlete
+        <Button variant="danger" type="submit">
+        Add Athlete
         </Button>
       </Link>
     </Form>
