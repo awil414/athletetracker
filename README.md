@@ -28,7 +28,6 @@ The necessary dependencies to install are:
 * MongoDB
 * Mongoose
 * GraphQL.js
-* React.js
 * Nodemon (optional to keep server running after changes)
 
 ## Usage
@@ -55,4 +54,4 @@ If you have any questions about the repo or would like to see more of our work, 
 * Tierney Allen - tierney_03@mac.com GitHub:  [tierney03](https://github.com/tierney03)
 * Karen Adkins - fnk8476@gmail.com  GitHub: [KarenAdkins84](https://github.com/KarenAdkins84)
 * Leah Choco - mrsleahchoco@gmail.com GitHub: [leah-choco](https://github.com/leah-choco)
-* Amber Wilson - amber.wilson.code@gmail.com GitHub: [awil414](https://github.com/awil414/).
+* Amber Wilson - amber.wilson.code@gmail.com GitHub: [awil414](https://github.com/awil414/)
