@@ -70,7 +70,7 @@ export default function Dashboard() {
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={2}>
-            {/* {athletes.map((athlete) => {
+            {/* {userData.athletes.map((athlete) => {
             return ( */}
             {cards.map((card) => (
               // <Grid item key={athlete._id} xs={12} sm={6} md={4}>
@@ -88,7 +88,6 @@ export default function Dashboard() {
                     </Typography>
                     <Typography>
                       <ul>
-                        <li>Phone Number</li>
                         <li>Email</li>
                         <li>Status</li>
                       </ul>

@@ -4,7 +4,6 @@ import { ADD_ATHLETE} from '../../utils/mutations';
 import "./NewAthlete.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-
 import { Link } from 'react-router-dom';
 
 import {QUERY_ME, GET_ATHLETES } from '../../utils/queries';
@@ -75,11 +74,11 @@ const handleInputChange = (event) => {
         <Form.Label>Injury Report</Form.Label>
         <Form.Control name='injuryReport' onChange={handleInputChange} value={athleteFormData.injuryReport} as="textarea" rows={1} />
       </Form.Group>
-      {/* <Link to='/dashboard'> */}
-      <Button variant="primary" type="submit">
+      <Link to='/dashboard'>
+        <Button variant="primary" type="submit">
         Create Athlete
-      </Button>
-      {/* </Link> */}
+        </Button>
+      </Link>
     </Form>
   );
 };
