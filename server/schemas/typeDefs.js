@@ -24,7 +24,7 @@ const typeDefs = gql`
   type Query {
     me: User
     athletes: [Athlete]
-    singleAthlete(_id: ID!): Athlete
+    singleAthlete(athleteId: ID!): Athlete
   }
 
   input AthleteInput {
@@ -40,8 +40,8 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addAthlete(athlete: AthleteInput): Athlete
-    updateAthlete(_id: ID, athleteData: AthleteInput): Athlete
-    removeAthlete(_id: ID): User
+    updateAthlete(athleteId: ID!, athleteData: AthleteInput): Athlete
+    removeAthlete(athleteId: ID!): User
   }
 `;
 module.exports = typeDefs;
