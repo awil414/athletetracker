@@ -8,9 +8,9 @@ This application has a React front-end, uses a MongoDB database, Node.js and Exp
 
 ## Table of Contents
 * [Deployed Application](#AppLink)
+* [Screenshots](#Screenshots)
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Screenshots](#Screenshots)
 * [Credits](#Credits)
 * [License](#License)
 
@@ -18,7 +18,7 @@ This application has a React front-end, uses a MongoDB database, Node.js and Exp
 
 ## Deployed Application
 
-
+## Screenshots
 
 ## Installation
 The necessary dependencies to install are:
@@ -43,9 +43,6 @@ To finish the application set-up, complete the following steps:
 ```npm run develop```
 * Now that the server is running, you can make requests to it through your desired method, e.g. [Apollo Sandbox](https://www.apollographql.com/docs/graphos/explorer/sandbox/)
   
-## Screenshots
-
-
 ## License
       
 This project is licensed under the MIT license.
@@ -53,9 +50,9 @@ This project is licensed under the MIT license.
 ## Credits
 This project was developed by Karen Adkins, Tierney Allen, Leah Choco, and Amber Wilson.
 
-## Questions and Contacts
-If you have any questions about the repo or would like to see more of our work, contact us at 
-[Tierney Allen](https://github.com/tierney03)
-[Karen Adkins](https://github.com/KarenAdkins84)
-[Leah Choco](https://github.com/leah-choco)
-[Amber Wilson](https://github.com/awil414/).
+## Questions/Contacts
+If you have any questions about the repo or would like to see more of our work, contact us at:
+* Tierney Allen  Email tierney_03@mac.com   [GitHub tierney03](https://github.com/tierney03)
+* Karen Adkins  Email fnk8476@gmail.com   [GitHub KarenAdkins84](https://github.com/KarenAdkins84)
+* Leah Choco  Email mrsleahchoco@gmail.com [GitHub leah-choco](https://github.com/leah-choco)
+* Amber Wilson  Email amber.wilson.code@gmail.com [GitHub awil414](https://github.com/awil414/).
