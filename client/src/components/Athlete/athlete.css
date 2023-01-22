@@ -1,3 +1,8 @@
 .update {
-    background: var(--text);
+  background: var(--text);
 }
+/* 
+.card {
+  display: flex;
+  justify-content: center;
+} */

@@ -1,18 +1,8 @@
 //
-import Avatar from "@mui/material/Avatar";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { Form, Button, Alert } from "react-bootstrap";
+import "./loginform.css";
 
 import { LOGIN_USER } from "../utils/mutations";
 
@@ -64,7 +54,9 @@ const LoginForm = () => {
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Label htmlFor="email" className="spacing">
+            Email
+          </Form.Label>
           <Form.Control
             type="text"
             placeholder="Your email"
@@ -79,7 +71,9 @@ const LoginForm = () => {
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Label htmlFor="password" className="spacing">
+            Password
+          </Form.Label>
           <Form.Control
             type="password"
             placeholder="Your password"
@@ -93,6 +87,7 @@ const LoginForm = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Button
+          className="spacing"
           disabled={!(userFormData.email && userFormData.password)}
           type="submit"
           variant="danger"
