@@ -7,7 +7,7 @@ This personal trainer client tracker uses the MERN stack. Users add clients' inf
 This application has a React front-end, uses a MongoDB database, Node.js and Express.js server, GraphQL, and Apollo Server. 
 
 ## Table of Contents
-* [Deployment](#Deployment)
+* [Deployment](#Deployed Application)
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Screenshots](#Screenshots)
