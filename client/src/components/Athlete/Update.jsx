@@ -7,7 +7,7 @@ import "./athlete.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import {QUERY_ME, GET_ATHLETE } from '../../utils/queries';
+import {QUERY_ME, QUERY_GET_ATHLETE } from '../../utils/queries';
 
 // import Auth from '../../utils/auth';
 
@@ -62,10 +62,10 @@ const handleInputChange = (event) => {
         <Form.Label>Email Address</Form.Label>
         <Form.Control onChange={handleInputChange} value={athleteFormData.email} type="email" placeholder="athlete@athlete.com" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+      {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Phone Number</Form.Label>
         <Form.Control onChange={handleInputChange} value={athleteFormData.phoneNumber} type="number" placeholder="(000)000-0000" />
-      </Form.Group>
+      </Form.Group> */}
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Notes</Form.Label>
         <Form.Control onChange={handleInputChange} value={athleteFormData.notes} as="textarea" rows={3} />

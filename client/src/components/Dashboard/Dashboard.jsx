@@ -117,10 +117,11 @@ import {
   Card,
   Button,
 } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 import { useMutation, useQuery } from "@apollo/client";
 
- import { GET_ATHLETES, QUERY_ME } from "../../utils/queries";
+ import { QUERY_GET_ATHLETES, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
@@ -158,12 +159,13 @@ const Dashboard = () => {
                 <Card.Body>
                   <Card.Title>{athlete.firstName} {athlete.lastName}</Card.Title>
                   <Card.Text>{athlete.email} {athlete.injuryReport}</Card.Text>
-                  <Button
+                  <Link
+                    to={`/athletes/${athlete._id}`}
                     className="btn-block btn-danger"
                   //  This should take user to single athlete
                   >
                     View this athlete
-                  </Button>
+                  </Link>
                 </Card.Body>
               </Card>
             );

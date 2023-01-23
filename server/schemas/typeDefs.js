@@ -5,14 +5,13 @@ const typeDefs = gql`
     _id: ID!
     username: String!
     email: String!
-    currentAthletes: [Athlete]
+    currentAthletes: [Athlete!]!
   }
   type Athlete {
     _id: ID!
     firstName: String!
     lastName: String!
     email: String!
-    phoneNumber: Int!
     notes: String
     injuryReport: String
   }
@@ -31,7 +30,6 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
-    phoneNumber: Int!
     notes: String
     injuryReport: String
   }

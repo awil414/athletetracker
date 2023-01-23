@@ -5,7 +5,7 @@ import "./NewAthlete.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { QUERY_ME, GET_ATHLETES } from "../../utils/queries";
+import { QUERY_ME, QUERY_SINGLE_ATHLETES } from "../../utils/queries";
 
 
 // import Auth from '../../utils/auth';

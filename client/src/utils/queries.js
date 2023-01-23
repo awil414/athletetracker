@@ -11,7 +11,6 @@ export const QUERY_ME = gql`
         firstName
         lastName
         email
-        phoneNumber
         notes
         injuryReport
       }
@@ -20,14 +19,13 @@ export const QUERY_ME = gql`
 `;
 
 // ?????
-export const GET_ATHLETES = gql`
+export const QUERY_GET_ATHLETES = gql`
   query getAthletes {
     athletes {
       _id
       firstName
       lastName
       email
-      phoneNumber
       notes
       injuryReport
     }
@@ -35,14 +33,13 @@ export const GET_ATHLETES = gql`
 `;
 
 // ??????
-export const GET_ATHLETE = gql`
-  query getAthlete($athleteId: ID!) {
+export const QUERY_SINGLE_ATHLETE = gql`
+  query singleAthlete($athleteId: ID!) {
     athletes(athleteId: $athleteId) {
       _id
       firstName
       lastName
       email
-      phoneNumber
       notes
       injuryReport
     }

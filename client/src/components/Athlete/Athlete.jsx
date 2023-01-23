@@ -6,7 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { GET_ATHLETE } from "../../utils/queries";
+import { QUERY_SINGLE_ATHLETE } from "../../utils/queries";
 import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -16,7 +16,7 @@ import Auth from "../../utils/auth";
 export default function Athlete() {
   // Use 'useParams()' to retrieve value of the route parameter ':athleteId
   const { athleteId } = useParams();
-  const { loading, data } = useQuery(GET_ATHLETE, {
+  const { loading, data } = useQuery(QUERY_SINGLE_ATHLETE, {
     variables: { athleteId: athleteId },
   });
 
