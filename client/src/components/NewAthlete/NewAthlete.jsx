@@ -32,7 +32,7 @@ const AddAthlete = () => {
         },
       });
       console.log(data);
-      window.location.replace("/dashboard")
+      window.location.replace("/dashboard");
       //setAthleteFormData('');
     } catch (err) {
       console.error(err);
