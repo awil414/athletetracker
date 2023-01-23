@@ -36,8 +36,8 @@ export const GET_ATHLETES = gql`
 
 // ??????
 export const GET_ATHLETE = gql`
-  query getAthlete($athleteId: ID!) {
-    athletes(athleteId: $athleteId) {
+  query singleAthlete($athleteId: ID!) {
+    singleAthlete(athleteId: $athleteId) {
       _id
       firstName
       lastName
