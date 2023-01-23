@@ -2,6 +2,10 @@
   text-decoration: none;
 }
 
+.input {
+  color: black !important;
+}
+
 /* .card {
   height: 100%;
   display: flex;

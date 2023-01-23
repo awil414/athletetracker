@@ -20,7 +20,7 @@ export default function Athlete() {
     variables: { athleteId: athleteId },
   });
 
-  const athlete = data?.athlete || {};
+  const athlete = data?.singleAthlete || {};
 
   const [removeAthlete] = useMutation(REMOVE_ATHLETE);
 
@@ -50,14 +50,20 @@ export default function Athlete() {
     <Card sx={{ maxWidth: 500 }} className="card">
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          athlete.firstName athlete.lastName
+          {athlete.firstName} {athlete.lastName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          athlete email athlete notes athlete injury
+          {athlete.email} athlete notes athlete injury
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {athlete.notes} 
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+         {athlete.injuryReport}
         </Typography>
       </CardContent>
       <CardActions>
-        <Link to="/update" style={{ textDecoration: "none" }}>
+        <Link to={`/update/${athlete._id}`} style={{ textDecoration: "none" }}>
           <Button size="small">Edit</Button>
         </Link>
         {/* Needs to connect to MongoDB to REMOVE_ATHLETE */}

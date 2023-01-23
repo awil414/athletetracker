@@ -1,11 +1,13 @@
 import React from "react";
-import { Container, CardColumns, Card, Button } from "react-bootstrap";
+import { Container, CardColumns, Card, Button, } from "react-bootstrap";
 
 import { useMutation, useQuery } from "@apollo/client";
 
 import { GET_ATHLETES, QUERY_ME } from "../../utils/queries";
-
+import { Link } from "react-router-dom";
 import Auth from "../../utils/auth";
+
+import "./dashboard.css";
 
 const Dashboard = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -33,18 +35,23 @@ const Dashboard = () => {
             return (
               <Card key={athlete._id} border="dark">
                 <Card.Body>
-                  <Card.Title>
+                  <Card.Title className="input">
                     {athlete.firstName} {athlete.lastName}
                   </Card.Title>
-                  <Card.Text>
-                    {athlete.email} {athlete.injuryReport}
+                  <Card.Text className="input">
+                    {athlete.email} 
                   </Card.Text>
-                  <Button
-                    className="btn-block btn-danger"
-                    //  This should take user to single athlete
-                  >
-                    View this athlete
-                  </Button>
+                  <Card.Text className="input">
+                    {athlete.injuryReport}
+                  </Card.Text>
+                  <Link to={`/athlete/${athlete._id}`}>
+                    <Button
+                      className="btn-block btn-danger"
+                      //  This should take user to single athlete
+                    >
+                      View this athlete
+                    </Button>
+                  </Link>
                 </Card.Body>
               </Card>
             );
