@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { QUERY_ME, GET_ATHLETES } from "../../utils/queries";
 
-
 // import Auth from '../../utils/auth';
 
 const AddAthlete = () => {
@@ -106,11 +105,11 @@ const AddAthlete = () => {
           rows={1}
         />
       </Form.Group>
-      <Link to='/dashboard'>
-        <Button variant="danger" type="submit">
+      {/* <Link to='/dashboard'> */}
+      <Button variant="danger" type="submit">
         Add Athlete
-        </Button>
-      </Link>
+      </Button>
+      {/* </Link> */}
     </Form>
   );
 };
