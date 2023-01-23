@@ -97,7 +97,7 @@ const resolvers = {
     // Deleting an athlete from User's currentAthlete array
     removeAthlete: async (parent, { _id }, context) => {
       if (context.user) {
-        const athleteData = await Athlete.findOneByDelete(_id);
+        const athleteData = await Athlete.findOneAndDelete(_id);
         const updateUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $pull: { currentAthletes: athleteData._id } },
