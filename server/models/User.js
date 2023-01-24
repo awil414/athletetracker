@@ -51,6 +51,7 @@ userSchema.pre("save", async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
+//We needed to make sure this matched all imports and exports
 
 const User = model("User", userSchema);
 

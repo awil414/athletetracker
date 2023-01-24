@@ -45,15 +45,6 @@ export const REMOVE_ATHLETE = gql`
       _id
       username
       email
-      currentAthletes {
-        _id
-        firstName
-        lastName
-        email
-        phoneNumber
-        notes
-        injuryReport
-      }
     }
   }
 `;

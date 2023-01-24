@@ -25,7 +25,7 @@ const Dashboard = () => {
         <h1>Current Athletes</h1>
         <h2>
           {userData.currentAthletes.length
-            ? `Viewing ${userData.currentAthletes.length} current ${
+            ? `You have ${userData.currentAthletes.length} ${
                 userData.currentAthletes.length === 1 ? "athlete" : "athletes"
               }:`
             : "You have no current athletes!"}
