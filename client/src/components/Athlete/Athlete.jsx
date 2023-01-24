@@ -12,10 +12,13 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { REMOVE_ATHLETE } from "../../utils/mutations";
 import Auth from "../../utils/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Athlete() {
   // Use 'useParams()' to retrieve value of the route parameter ':athleteId
   const { athleteId } = useParams();
+  const navigate = useNavigate();
+  console.log(athleteId);
   const { loading, data } = useQuery(GET_ATHLETE, {
     variables: { athleteId: athleteId },
   });
@@ -33,13 +36,12 @@ export default function Athlete() {
     }
 
     try {
-      const { athlete  } = await removeAthlete({
-        variables: { athleteId },
+      const { athlete } = await removeAthlete({
+        variables: { athleteId: athleteId },
       });
+      console.log(athlete);
 
-      removeAthlete(athleteId);
-      window.location.replace("/dashboard")
-      // window.location.reload()
+      navigate("/dashboard");
     } catch (err) {
       console.error(err);
     }
@@ -55,13 +57,13 @@ export default function Athlete() {
           {athlete.firstName} {athlete.lastName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {athlete.email} 
+          {athlete.email}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {athlete.notes} 
+          {athlete.notes}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-         {athlete.injuryReport}
+          {athlete.injuryReport}
         </Typography>
       </CardContent>
       <CardActions>
@@ -69,10 +71,7 @@ export default function Athlete() {
           <Button size="small">Edit</Button>
         </Link>
         {/* Needs to connect to MongoDB to REMOVE_ATHLETE */}
-        <Button
-          onClick={() => handleRemoveAthlete(athleteId)}
-          size="small"
-        >
+        <Button onClick={() => handleRemoveAthlete(athlete._id)} size="small">
           Delete
         </Button>
       </CardActions>
