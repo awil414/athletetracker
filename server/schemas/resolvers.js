@@ -109,7 +109,7 @@ const resolvers = {
     },
 
     //When testing, use console logs, can allow us to see if it's mongoose or GraphQl, also the params like athleteData
-    updateAthlete: async (parent, { athletId, athleteData }) => {
+    updateAthlete: async (parent, { athleteId, athleteData }) => {
       return Athlete.findByIdAndUpdate(
         { _id: athleteId },
         { $set: athleteData },
