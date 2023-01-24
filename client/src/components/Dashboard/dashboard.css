@@ -6,9 +6,20 @@
   color: black !important;
 }
 
-/* .card {
+.card {
   height: 100%;
+  width: 300px;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  margin-top: 20px;
+}
 
-} */
+.cardcolumns {
+  margin: auto;
+}
+
+.container {
+  margin-top: 50px;
+  margin-left: 50px;
+}
