@@ -95,32 +95,42 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     // Deleting an athlete from User's currentAthlete array
-    removeAthlete: async (parent, { _id }, context) => {
+    removeAthlete: async (parent, { athleteId }, context) => {
       if (context.user) {
-        const athleteData = await Athlete.findOneAndDelete(_id);
-        const updateUser = await User.findByIdAndUpdate(
+        console.log("id", athleteId);
+        const athleteData = await Athlete.findOneAndDelete({ _id: athleteId });
+        await console.log("athlete data", athleteData);
+        const updateUser = await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { currentAthletes: athleteData._id } },
+          { $pull: { currentAthletes: athleteId } },
           { new: true }
         );
+        console.log("my user");
+        console.log(updateUser);
         return updateUser;
       }
       throw new AuthenticationError("You need to be logged in!");
     },
 
     //When testing, use console logs, can allow us to see if it's mongoose or GraphQl, also the params like athleteData
-    updateAthlete: async (parent, { athleteId }, context) => {
+    updateAthlete: async (parent, { athleteId, athleteData }, context) => {
+      console.log("yea!");
       if (context.user) {
-        const athleteData = await Athlete.findOneAndUpdate(_id);
+        console.log("hi!");
+        const athleteData = await Athlete.findOneAndUpdate(
+          { _id: athleteId },
+          { $set: athleteData },
+          { new: true }
+        );
         console.log(athleteData);
-        const updateUser = await User.findByIdAndUpdate(
-        { _id: athleteId },
-        { $set: athleteData },
-        { new: true }
-      );
-      return athleteData;
-    }
-    throw new AuthenticationError("You need to be logged in!");
+        // const updateUser = await User.findByIdAndUpdate(
+        //   { _id: athleteId },
+        //   { $set: athleteData },
+        //   { new: true }
+        // );
+        return athleteData;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
