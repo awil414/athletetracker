@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
+import { Navbar, Nav, Container, Modal, Tab, Image } from "react-bootstrap";
 import SignUpForm from "../SignUp";
 import LoginForm from "../LoginForm";
 import Auth from "../../utils/auth";
@@ -32,6 +32,9 @@ const AppNavbar = () => {
                   </Nav.Link>
                   <Nav.Link as={Link} to="/add">
                     Add Athlete
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/venmo">
+                    Payment
                   </Nav.Link>
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>

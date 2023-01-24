@@ -20,12 +20,12 @@ export default function Athlete() {
     variables: { athleteId: athleteId },
   });
 
-  const athlete = data?.athlete || {};
+  const athlete = data?.singleAthlete || {};
 
   const [removeAthlete] = useMutation(REMOVE_ATHLETE);
 
   // create function that accepts the athlete's mongo _id value as param and deletes the athlete from the database
-  const handleRemoveAthlete = async (athlete_id) => {
+  const handleRemoveAthlete = async (athlete) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -33,11 +33,12 @@ export default function Athlete() {
     }
 
     try {
-      const response = await removeAthlete({
-        variables: { athlete_id },
+      const {athlete} = await removeAthlete({
+        variables: { athleteId },
       });
 
-      removeAthlete(athlete_id);
+      removeAthlete(athleteId);
+      window.location.replace("/dashboard")
     } catch (err) {
       console.error(err);
     }
@@ -50,19 +51,25 @@ export default function Athlete() {
     <Card sx={{ maxWidth: 500 }} className="card">
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          athlete.firstName athlete.lastName
+          {athlete.firstName} {athlete.lastName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          athlete email athlete notes athlete injury
+          {athlete.email} 
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {athlete.notes} 
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+         {athlete.injuryReport}
         </Typography>
       </CardContent>
       <CardActions>
-        <Link to="/update" style={{ textDecoration: "none" }}>
+        <Link to={`/update/${athlete._id}`} style={{ textDecoration: "none" }}>
           <Button size="small">Edit</Button>
         </Link>
         {/* Needs to connect to MongoDB to REMOVE_ATHLETE */}
         <Button
-          onClick={() => handleRemoveAthlete(athlete.athlete_id)}
+          onClick={() => handleRemoveAthlete(athleteId)}
           size="small"
         >
           Delete

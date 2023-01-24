@@ -1,6 +1,12 @@
 .navbar {
   background: var(--variant);
   color: var(--text);
+
+  @media screen and (max-width: 699px) {
+    text {
+      font-size: 10px;
+    }
+  }
 }
 
 .nav-link {

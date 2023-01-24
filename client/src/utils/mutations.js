@@ -40,8 +40,8 @@ export const ADD_ATHLETE = gql`
 `;
 
 export const REMOVE_ATHLETE = gql`
-  mutation removeAthlete($_id: ID!) {
-    removeAthlete(_id: $_id) {
+  mutation removeAthlete($athleteId: ID!) {
+    removeAthlete(athleteId: $athleteId) {
       _id
       username
       email
@@ -59,8 +59,8 @@ export const REMOVE_ATHLETE = gql`
 `;
 
 export const UPDATE_ATHLETE = gql`
-  mutation updateAthlete($_id: ID, $athleteData: AthleteInput) {
-    updateAthlete(_id: $_id, athleteData: $AthleteInput) {
+  mutation updateAthlete($athleteId: ID, $athleteData: AthleteInput) {
+    updateAthlete(athleteId: $athleteId, athleteData: $AthleteInput) {
       _id
       username
       email

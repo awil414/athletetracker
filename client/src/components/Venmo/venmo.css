@@ -1,0 +1,16 @@
+#paypal-button-container {
+  display: block;
+  padding: 100px;
+  width: 600px;
+  margin: auto;
+}
+
+.venmo-1,
+.venmo-2 {
+  width: 400px;
+  padding-top: 50px;
+}
+
+.venmo-2 {
+  padding-top: 25px;
+}

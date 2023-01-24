@@ -32,9 +32,11 @@ const resolvers = {
     },
 
     // query to GET one athlete:
-    singleAthlete: async (parent, { _id }, context) => {
+    singleAthlete: async (parent, { athleteId }, context) => {
       try {
-        const athleteData = await Athlete.findById(_id);
+        console.log(athleteId);
+        const athleteData = await Athlete.findById(athleteId);
+        console.log(athleteData);
         return athleteData;
       } catch (err) {
         if (err) {
@@ -95,7 +97,7 @@ const resolvers = {
     // Deleting an athlete from User's currentAthlete array
     removeAthlete: async (parent, { _id }, context) => {
       if (context.user) {
-        const athleteData = await Athlete.findOneByDelete(_id);
+        const athleteData = await Athlete.findOneAndDelete(_id);
         const updateUser = await User.findByIdAndUpdate(
           { _id: context.user._id },
           { $pull: { currentAthletes: athleteData._id } },
@@ -107,9 +109,9 @@ const resolvers = {
     },
 
     //When testing, use console logs, can allow us to see if it's mongoose or GraphQl, also the params like athleteData
-    updateAthlete: async (parent, { _id, athleteData }) => {
+    updateAthlete: async (parent, { athletId, athleteData }) => {
       return Athlete.findByIdAndUpdate(
-        { _id: _id },
+        { _id: athleteId },
         { $set: athleteData },
         { new: true }
       );
