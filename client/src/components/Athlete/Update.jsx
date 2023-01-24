@@ -36,7 +36,8 @@ const UpdateAthlete = () => {
     event.preventDefault();
 
     try {
-    const { athleteData } = await updateAthlete({
+      // TIERNEY ! BOBBI LOOK AT THIS WHOLE SECTION
+    const { athleteFormData } = await updateAthlete({
       // ADDING THIS WAS AS FAR AS I GOT WITH MY TUTOR, but we were almost there"
       variables: {
         athleteId: athleteFormData._id,
