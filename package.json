@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/awil414/Grand-Finale/issues"
   },
-  "homepage": "https://github.com/awil414/Grand-Finale#readme"
+  "homepage": "https://github.com/awil414/Grand-Finale#readme",
+  "engines": {
+    "node": "14.18.1"
+  }
 }

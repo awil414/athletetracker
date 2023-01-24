@@ -57,13 +57,13 @@ export default function Athlete() {
           {athlete.firstName} {athlete.lastName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {athlete.email}
+          Email: {athlete.email}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {athlete.notes}
+          Notes: {athlete.notes}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {athlete.injuryReport}
+          Injury Report: {athlete.injuryReport}
         </Typography>
       </CardContent>
       <CardActions>
