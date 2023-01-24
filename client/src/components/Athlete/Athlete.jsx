@@ -33,12 +33,13 @@ export default function Athlete() {
     }
 
     try {
-      const {athlete} = await removeAthlete({
+      const { athlete  } = await removeAthlete({
         variables: { athleteId },
       });
 
       removeAthlete(athleteId);
       window.location.replace("/dashboard")
+      // window.location.reload()
     } catch (err) {
       console.error(err);
     }
