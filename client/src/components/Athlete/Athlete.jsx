@@ -12,12 +12,12 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { REMOVE_ATHLETE } from "../../utils/mutations";
 import Auth from "../../utils/auth";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 export default function Athlete() {
   // Use 'useParams()' to retrieve value of the route parameter ':athleteId
   const { athleteId } = useParams();
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   console.log(athleteId);
   const { loading, data } = useQuery(GET_ATHLETE, {
     variables: { athleteId: athleteId },
@@ -41,7 +41,7 @@ export default function Athlete() {
       });
       console.log(athlete);
 
-      navigate("/dashboard");
+      window.location.replace("/dashboard");
     } catch (err) {
       console.error(err);
     }
