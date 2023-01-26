@@ -1,26 +1,27 @@
 import React from "react";
 import { Container, CardColumns, Card, Button, } from "react-bootstrap";
 
-import { useMutation, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
-import { GET_ATHLETES, QUERY_ME } from "../../utils/queries";
+import { QUERY_ME } from "../../utils/queries";
 import { Link } from "react-router-dom";
-import Auth from "../../utils/auth";
+//import Auth from "../../utils/auth";
 
 import "./dashboard.css";
 
-const Dashboard = () => {
+const Dashboard = (refetch) => {
   const { loading, data } = useQuery(QUERY_ME);
 
-  const userData = data?.me || [];
+  const userData = data?.me || {};
 
-  // if data isn't here yet, say so
+
+  //if data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }
 
   return (
-    <>
+    <div refetch={refetch}>
       <Container>
         <h1>Current Athletes</h1>
         <h2>
@@ -33,7 +34,7 @@ const Dashboard = () => {
         <CardColumns>
           {userData.currentAthletes.map((athlete) => {
             return (
-              <Card key={athlete._id} border="dark">
+              <Card key={athlete._id} border="dark" refetch={refetch}>
                 <Card.Body>
                   <Card.Title className="input">
                     {athlete.firstName} {athlete.lastName}
@@ -57,8 +58,9 @@ const Dashboard = () => {
             );
           })}
         </CardColumns>
+
       </Container>
-    </>
+    </div>
   );
 };
 
