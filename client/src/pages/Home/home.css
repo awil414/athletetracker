@@ -1,5 +1,5 @@
 .bg-img {
-    background-image: url(../../images/athletetracker.jpeg) !important;
+   background-image: url(../../images/athletetracker.jpeg) !important; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,4 +13,17 @@
 
   .container {
     height: 100vh;
+  }
+
+  .Typewriter{
+    font-size: 60px;
+  }
+
+  @media screen and (max-width: 600px) {
+    .Typewriter{
+      font-size: 40px;
+
+    }
+
+  
   }
