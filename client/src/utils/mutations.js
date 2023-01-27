@@ -39,6 +39,20 @@ export const ADD_ATHLETE = gql`
   }
 `;
 
+export const UPDATE_ATHLETE = gql`
+  mutation updateAthlete($athleteId: ID!) {
+    updateAthlete(athleteId: $athleteId) {
+        _id
+        firstName
+        lastName
+        email
+        phoneNumber
+        notes
+        injuryReport
+    }
+  }
+`;
+
 export const REMOVE_ATHLETE = gql`
   mutation removeAthlete($athleteId: ID!) {
     removeAthlete(athleteId: $athleteId) {
@@ -49,21 +63,4 @@ export const REMOVE_ATHLETE = gql`
   }
 `;
 
-export const UPDATE_ATHLETE = gql`
-  mutation updateAthlete($athleteId: ID, $athleteData: AthleteInput) {
-    updateAthlete(athleteId: $athleteId, athleteData: $AthleteInput) {
-      _id
-      username
-      email
-      currentAthletes {
-        _id
-        firstName
-        lastName
-        email
-        phoneNumber
-        notes
-        injuryReport
-      }
-    }
-  }
-`;
+
