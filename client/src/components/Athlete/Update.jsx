@@ -14,8 +14,11 @@ import { QUERY_ME, GET_ATHLETE } from "../../utils/queries";
 // import Auth from '../../utils/auth';
 
 const UpdateAthlete = () => {
+
   // ????We will want current data stored to be populated in this useState
-  const [athleteFormData, setAthleteFormData] = useState("");
+  // const [athleteFormData, setAthleteFormData] = useState("");
+
+ 
 
   const [updateAthlete, { error }] = useMutation(UPDATE_ATHLETE);
   const { athleteId } = useParams();
@@ -28,6 +31,9 @@ const UpdateAthlete = () => {
     // const athlete = data?.singleAthlete || {};
   }, [data?.singleAthlete]);
   // ???? Do we need queries????
+  
+  const [athleteFormData, setAthleteFormData] = useState("");
+ 
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -39,18 +45,12 @@ const UpdateAthlete = () => {
         // ADDING THIS WAS AS FAR AS I GOT WITH MY TUTOR, but we were almost there"
         variables: {
           athleteId: athleteFormData._id,
-          athleteData: {
-            firstName: athleteFormData.firstName,
-            lastName: athleteFormData.lastName,
-            email: athleteFormData.email,
-            notes: athleteFormData.notes,
-            injuryReport: athleteFormData.injuryReport,
-          },
+          athlete: {...athleteFormData},
         },
       });
       console.log(data);
-
-      setAthleteFormData("");
+      window.location.replace('/dashboard');
+      //setAthleteFormData("");
     } catch (err) {
       console.error(err);
     }

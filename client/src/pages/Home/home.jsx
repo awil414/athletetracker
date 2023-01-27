@@ -6,9 +6,10 @@ import Typewriter from "typewriter-effect";
 
 const AppHome = () => {
   return (
-    <div className="bg-img" style={{ backgroundImage: `url(${BgImage})` }}>
-      {" "}
+    <>
       <Container className="d-flex align-items-center justify-content-center">
+        <div className="bg-img" style={{ backgroundImage: `url(${BgImage})` }}>
+        {" "}
         <Typewriter
           onInit={(typewriter) => {
             typewriter
@@ -21,8 +22,9 @@ const AppHome = () => {
               .start();
           }}
         />
+         </div>
       </Container>
-    </div>
+   </>
   );
 };
 

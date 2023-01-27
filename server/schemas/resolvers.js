@@ -113,7 +113,7 @@ const resolvers = {
     },
 
     //When testing, use console logs, can allow us to see if it's mongoose or GraphQl, also the params like athleteData
-    updateAthlete: async (parent, { athleteId, athleteData }, context) => {
+    updateAthlete: async (parent, { athleteId }, context) => {
       console.log("yea!");
       if (context.user) {
         console.log("hi!");
@@ -122,12 +122,12 @@ const resolvers = {
           { $set: athleteData },
           { new: true }
         );
-        console.log(athleteData);
-        // const updateUser = await User.findByIdAndUpdate(
-        //   { _id: athleteId },
-        //   { $set: athleteData },
-        //   { new: true }
-        // );
+        // console.log(athleteData)
+        const updateUser = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $set: { currentAthletes: athleteId } },
+          { new: true }
+        );
         return athleteData;
       }
       throw new AuthenticationError("You need to be logged in!");

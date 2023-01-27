@@ -40,8 +40,9 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addAthlete(athlete: AthleteInput): Athlete
-    updateAthlete(athleteId: ID!, athleteData: AthleteInput): Athlete
+    updateAthlete(athleteId: ID!, athlete: AthleteInput): Athlete
     removeAthlete(athleteId: ID): User
   }
 `;
 module.exports = typeDefs;
+// line 43 changed from athleteData to athlete
