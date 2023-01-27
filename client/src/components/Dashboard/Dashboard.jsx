@@ -22,7 +22,7 @@ const Dashboard = (refetch) => {
 
   return (
     <div refetch={refetch}>
-      <Container>
+      <Container className="dashboard-container">
         <h1>Current Athletes</h1>
         <h2>
           {userData.currentAthletes.length

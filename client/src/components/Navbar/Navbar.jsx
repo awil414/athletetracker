@@ -13,7 +13,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar className="navbar">
+      <Navbar expand="md" className="navbar" variant="dark">
         <Container fluid>
           <Navbar.Brand eventKey="1" as={Link} to="/">
             <span className="athlete">athlete</span>
