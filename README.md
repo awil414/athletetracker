@@ -2,7 +2,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-This personal trainer client tracker uses the MERN stack. Users add clients' information, saving it to their current athletes dashboard, and update and delete clients as desired. ```athletetracker``` has the ability to store the users liability waiver, as well.
+This personal trainer client tracker uses the MERN stack. User's add clients' information, saving it to their current athletes dashboard, and update and delete clients as desired. ```athletetracker``` has the ability to store the user's personal liability waiver, as well as their preferred method of payment.
 
 This application has a React front-end, uses a MongoDB database, Node.js and Express.js server, GraphQL, and Apollo Server. 
 
