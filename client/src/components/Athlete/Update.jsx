@@ -26,7 +26,7 @@ const UpdateAthlete = () => {
   useEffect(() => {
     setAthleteFormData(data?.singleAthlete || {});
     // const athlete = data?.singleAthlete || {};
-  }, []);
+  }, [data?.singleAthlete]);
   // ???? Do we need queries????
 
   const handleFormSubmit = async (event) => {
