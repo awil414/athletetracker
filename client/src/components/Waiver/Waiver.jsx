@@ -16,7 +16,6 @@ const Waiver = () => {
           style={styles}
           src={URL}
         ></iframe>
-        {/* <button onClick={() => window.location.href = 'https://form.jotform.com/230127028620141'}>Waiver</button> */}
       </div>
     </div>
   );

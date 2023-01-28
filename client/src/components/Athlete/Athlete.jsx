@@ -47,9 +47,7 @@ export default function Athlete() {
     }
   };
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
+ 
   return (
     <div className='athlete-card'>
       <Card sx={{ maxWidth: 500 }} className="card">

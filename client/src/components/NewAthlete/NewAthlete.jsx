@@ -33,7 +33,6 @@ const AddAthlete = () => {
       });
       console.log(data);
       window.location.replace("/dashboard");
-      //setAthleteFormData('');
     } catch (err) {
       console.error(err);
     }
@@ -105,11 +104,9 @@ const AddAthlete = () => {
           rows={1}
         />
       </Form.Group>
-      {/* <Link to='/dashboard'> */}
       <Button variant="danger" type="submit">
         Add Athlete
       </Button>
-      {/* </Link> */}
     </Form>
   );
 };
