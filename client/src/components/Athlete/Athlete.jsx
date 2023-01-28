@@ -51,30 +51,32 @@ export default function Athlete() {
   //   return <div>Loading...</div>;
   // }
   return (
-    <Card sx={{ maxWidth: 500 }} className="card">
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {athlete.firstName} {athlete.lastName}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Email: {athlete.email}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Notes: {athlete.notes}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Injury Report: {athlete.injuryReport}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Link to={`/update/${athlete._id}`} style={{ textDecoration: "none" }}>
-          <Button size="small">Edit</Button>
-        </Link>
-        {/* Needs to connect to MongoDB to REMOVE_ATHLETE */}
-        <Button onClick={() => handleRemoveAthlete(athlete._id)} size="small">
-          Delete
-        </Button>
-      </CardActions>
-    </Card>
+    <div className='athlete-card'>
+      <Card sx={{ maxWidth: 500 }} className="card">
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {athlete.firstName} {athlete.lastName}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Email: {athlete.email}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Notes: {athlete.notes}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Injury Report: {athlete.injuryReport}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Link to={`/update/${athlete._id}`} style={{ textDecoration: "none" }}>
+            <Button size="small">Edit</Button>
+          </Link>
+          {/* Needs to connect to MongoDB to REMOVE_ATHLETE */}
+          <Button onClick={() => handleRemoveAthlete(athlete._id)} size="small">
+            Delete
+          </Button>
+        </CardActions>
+      </Card>
+    </div>
   );
 }

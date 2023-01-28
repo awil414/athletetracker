@@ -1,8 +1,7 @@
 .update {
   background: var(--text);
 }
-/* 
-.card {
-  display: flex;
-  justify-content: center;
-} */
+
+.athlete-card {
+  margin-top: 50px !important;
+}

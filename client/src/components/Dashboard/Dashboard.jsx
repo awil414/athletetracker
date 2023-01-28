@@ -22,9 +22,9 @@ const Dashboard = (refetch) => {
 
   return (
     <div refetch={refetch}>
-      <Container className="dashboard-container">
-        <h1>Current Athletes</h1>
-        <h2>
+      <Container>
+        <h1 className='text-center'>Current Athletes</h1>
+        <h2 className='text-center'>
           {userData.currentAthletes.length
             ? `You have ${userData.currentAthletes.length} ${
                 userData.currentAthletes.length === 1 ? "athlete" : "athletes"
