@@ -1,12 +1,8 @@
 import React from "react";
-import { Container, CardColumns, Card, Button, } from "react-bootstrap";
-
+import { Container, CardColumns, Card, Button } from "react-bootstrap";
 import { useQuery } from "@apollo/client";
-
 import { QUERY_ME } from "../../utils/queries";
 import { Link } from "react-router-dom";
-//import Auth from "../../utils/auth";
-
 import "./dashboard.css";
 
 const Dashboard = (refetch) => {
@@ -14,8 +10,7 @@ const Dashboard = (refetch) => {
 
   const userData = data?.me || {};
 
-
-  //if data isn't here yet, say so
+  //If data isn't here yet, say so
   if (loading) {
     return <h2>LOADING...</h2>;
   }
@@ -34,22 +29,17 @@ const Dashboard = (refetch) => {
         <CardColumns>
           {userData.currentAthletes.map((athlete) => {
             return (
-              <Card key={athlete._id} border="dark" refetch={refetch}>
+              <Card key={athlete._id} border='dark' refetch={refetch}>
                 <Card.Body>
-                  <Card.Title className="input">
+                  <Card.Title className='input'>
                     {athlete.firstName} {athlete.lastName}
                   </Card.Title>
-                  <Card.Text className="input">
-                    {athlete.email} 
-                  </Card.Text>
-                  <Card.Text className="input">
+                  <Card.Text className='input'>{athlete.email}</Card.Text>
+                  <Card.Text className='input'>
                     {athlete.injuryReport}
                   </Card.Text>
                   <Link to={`/athlete/${athlete._id}`}>
-                    <Button
-                      className="btn-block btn-danger"
-                      //  This should take user to single athlete
-                    >
+                    <Button className='btn-block btn-danger'>
                       View this athlete
                     </Button>
                   </Link>
@@ -58,7 +48,6 @@ const Dashboard = (refetch) => {
             );
           })}
         </CardColumns>
-
       </Container>
     </div>
   );

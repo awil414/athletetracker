@@ -49,14 +49,14 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/waiver" element={<Waiver />} />
-            <Route exact path="/dashboard" element={<Dashboard />} />
-            <Route exact path="/add" element={<NewAthlete />} />
-            <Route exact path="/athlete/:athleteId" element={<Athlete />} />
-            <Route exact path="/update/:athleteId" element={<Update />} />
-            <Route exact path="/venmo" element={<Venmo />} />
-            <Route element={() => <h1 className="display-2">Wrong page!</h1>} />
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/waiver' element={<Waiver />} />
+            <Route exact path='/dashboard' element={<Dashboard />} />
+            <Route exact path='/add' element={<NewAthlete />} />
+            <Route exact path='/athlete/:athleteId' element={<Athlete />} />
+            <Route exact path='/update/:athleteId' element={<Update />} />
+            <Route exact path='/venmo' element={<Venmo />} />
+            <Route element={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Routes>
         </>
       </Router>
