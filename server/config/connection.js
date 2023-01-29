@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//Need to connect to MongoDB -- use athlete tracker or change to match
+//Need to connect to MongoDB 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/athletetracker",
   {
