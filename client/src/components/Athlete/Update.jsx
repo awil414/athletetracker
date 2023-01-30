@@ -1,7 +1,4 @@
-//We will use NewAthlete form.
-
 import React, { useState, useEffect } from "react";
-
 import { useQuery, useMutation } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { UPDATE_ATHLETE } from "../../utils/mutations";
@@ -9,16 +6,12 @@ import "./athlete.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import { QUERY_ME, GET_ATHLETE } from "../../utils/queries";
-
-// import Auth from '../../utils/auth';
+import { GET_ATHLETE } from "../../utils/queries";
 
 const UpdateAthlete = () => {
 
-  // ????We will want current data stored to be populated in this useState
+  // current data stored to be populated in this useState
   const [athleteFormData, setAthleteFormData] = useState("");
-
- 
 
   const [updateAthlete, { error }] = useMutation(UPDATE_ATHLETE);
   const { athleteId } = useParams();
@@ -28,21 +21,15 @@ const UpdateAthlete = () => {
 
   useEffect(() => {
     setAthleteFormData(data?.singleAthlete || {});
-    // const athlete = data?.singleAthlete || {};
   }, [data?.singleAthlete]);
-  // ???? Do we need queries????
   
-  //const [athleteFormData, setAthleteFormData] = useState("");
- 
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
       console.log(athleteFormData);
-      // TIERNEY ! BOBBI LOOK AT THIS WHOLE SECTION
       const { data } = await updateAthlete({
-        // ADDING THIS WAS AS FAR AS I GOT WITH MY TUTOR, but we were almost there"
         variables: {
           athleteId: athleteFormData._id,
           athlete: {
@@ -56,7 +43,6 @@ const UpdateAthlete = () => {
       });
       console.log(data);
       window.location.replace('/dashboard');
-      //setAthleteFormData("");
     } catch (err) {
       console.error(err);
     }
@@ -100,10 +86,6 @@ const UpdateAthlete = () => {
           name="email"
         />
       </Form.Group>
-      {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Phone Number</Form.Label>
-        <Form.Control onChange={handleInputChange} value={athleteFormData.phoneNumber} type="number" placeholder="(000)000-0000" />
-      </Form.Group> */}
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Notes</Form.Label>
         <Form.Control
@@ -125,7 +107,6 @@ const UpdateAthlete = () => {
         />
       </Form.Group>
       <Button variant="primary" type="submit">
-        {/* ??? This button should link back to Dashboard */}
         Update
       </Button>
     </Form>

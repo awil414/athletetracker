@@ -14,10 +14,6 @@ const athleteSchema = new Schema(
       type: String,
       required: true,
     },
-    phoneNumber: {
-      type: Number,
-      required: true,
-    },
     notes: {
       type: String,
     },

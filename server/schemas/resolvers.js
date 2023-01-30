@@ -119,15 +119,11 @@ const resolvers = {
         console.log("hi!");
         const athleteData = await Athlete.findOneAndUpdate(
           { _id: athleteId },
-          { $set: { athlete } },
+          athlete,
           { new: true }
         );
         console.log(athleteData);
-        const updateUser = await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $set: { currentAthletes: athleteData._id } },
-          { new: true }
-        );
+        
         return athleteData;
       }
       throw new AuthenticationError("You need to be logged in!");
