@@ -10,7 +10,6 @@ const AddAthlete = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phoneNumber: 0,
     notes: "",
     injuryReport: "",
   });

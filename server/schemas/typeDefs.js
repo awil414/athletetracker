@@ -12,7 +12,6 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
-    phoneNumber: Int!
     notes: String
     injuryReport: String
   }
@@ -31,7 +30,6 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
-    phoneNumber: Int!
     notes: String
     injuryReport: String
   }
@@ -45,4 +43,3 @@ const typeDefs = gql`
   }
 `;
 module.exports = typeDefs;
-// line 43 changed from athleteData to athlete
